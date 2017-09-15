@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Tab2 테스트할때 아래 initViewController를 Tab2로
         
-        let initViewController = "Tab2"
+        let initViewController = "Main"
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
