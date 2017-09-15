@@ -22,6 +22,13 @@ app.get('/getArrivalTimeOfStation/:station_code', function (req, res) {
   res.send(getArrivalTimeOfStation(req.params.station_code));
 });
 
+app.get('/getStationInfo/:station_code', function(req ,res) {
+  var sql = "SELECT *, (SELECT COUNT(*) from station where station_code = A.station_code ) AS transfer from station AS A where station_code = "+req.params.station_code;
+  connection.query(sql, function(err, result) {
+    res.send(result);
+  });
+});
+
 app.get('/getNearStations/:lat/:lng', function(req, res) {
   var sql = "SELECT *, (lat-"+req.params.lat+")*(lat-"+req.params.lat+")+(lng-"+req.params.lng+")*(lng-"+req.params.lng+") AS D from station order by D limit 5;";
   connection.query(sql, function(err, result) {
@@ -39,9 +46,9 @@ server.listen(8000, function() {
 });
 
 function getArrivalTimeOfStation(stationCode) {
-  var res = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/1/1/');
+  var res = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/1/1/');
   var data = JSON.parse(res.getBody('utf8'));
-  var res2 = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/1/2/');
+  var res2 = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/1/2/');
   var data2 = JSON.parse(res.getBody('utf8'));
   return data.SearchArrivalTimeOfLine2SubwayByFRCodeService.row.concat(data2.SearchArrivalTimeOfLine2SubwayByFRCodeService.row);
 }
