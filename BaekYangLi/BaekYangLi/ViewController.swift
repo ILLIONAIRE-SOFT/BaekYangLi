@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     let locationManager = CLLocationManager()
     var loadLocation : Bool = true
+    var currentLocation = CLLocationCoordinate2D()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +27,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
 
-extension ViewController : CLLocationManagerDelegate{
+extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if loadLocation {
             CLGeocoder().reverseGeocodeLocation(manager.location!) { (placemarks, error) in
@@ -40,10 +39,12 @@ extension ViewController : CLLocationManagerDelegate{
                 }
                 if (placemarks?.count)! > 0 {
                     let placemark = placemarks?[0]
-                    print(placemark?.location?.coordinate)
+                    if let coordinate = placemark?.location?.coordinate {
+                        self.currentLocation = coordinate
+                        print(coordinate)
+                    }
                 }
             }
         }
     }
-    
 }
