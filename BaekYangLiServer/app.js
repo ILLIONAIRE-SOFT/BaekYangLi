@@ -22,7 +22,17 @@ app.get('/getArrivalTimeOfStation/:station_code', function (req, res) {
   res.send(getArrivalTimeOfStation(req.params.station_code));
 });
 
-app.get('/getStationInfo/:station_code', function(req ,res) {
+app.get('/getStationInfoByName/:name', function(req ,res) {
+  if(req.params.name.trim().endsWith("역"))
+    req.params.name = req.params.name.slice(0, req.params.name.length-1);
+  var sql = "SELECT *, (SELECT COUNT(*) from station where name = A.name ) AS transfer from station AS A where name = \""+req.params.name+"\"";
+  console.log(sql);
+  connection.query(sql, function(err, result) {
+    res.send(result);
+  });
+});
+
+app.get('/getStationInfoByCode/:station_code', function(req ,res) {
   var sql = "SELECT *, (SELECT COUNT(*) from station where name = A.name ) AS transfer from station AS A where station_code = "+req.params.station_code;
   console.log(sql);
   connection.query(sql, function(err, result) {
