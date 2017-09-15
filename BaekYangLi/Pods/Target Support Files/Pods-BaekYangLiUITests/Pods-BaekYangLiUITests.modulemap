@@ -1,0 +1,6 @@
+framework module Pods_BaekYangLiUITests {
+  umbrella header "Pods-BaekYangLiUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

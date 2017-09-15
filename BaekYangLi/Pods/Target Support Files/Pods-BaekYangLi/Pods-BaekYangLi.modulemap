@@ -1,0 +1,6 @@
+framework module Pods_BaekYangLi {
+  umbrella header "Pods-BaekYangLi-umbrella.h"
+
+  export *
+  module * { export * }
+}
