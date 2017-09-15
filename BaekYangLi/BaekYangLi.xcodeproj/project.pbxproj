@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B46F01F6C37F100C68D0E /* VoiceViewController.swift */; };
+		492B46F41F6C3B8C00C68D0E /* NaverSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */; };
+		492B46F51F6C3B8C00C68D0E /* NaverSpeech.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25A1F6C15F50096F550 /* AppDelegate.swift */; };
 		DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25C1F6C15F50096F550 /* ViewController.swift */; };
 		DA42D2601F6C15F50096F550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D25E1F6C15F50096F550 /* Main.storyboard */; };
@@ -36,8 +38,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		492B46F61F6C3B8C00C68D0E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				492B46F51F6C3B8C00C68D0E /* NaverSpeech.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		492B46F01F6C37F100C68D0E /* VoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoiceViewController.swift; path = ViewControllers/VoiceViewController.swift; sourceTree = "<group>"; };
+		492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NaverSpeech.framework; sourceTree = "<group>"; };
 		DA42D2571F6C15F50096F550 /* BaekYangLi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaekYangLi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA42D25A1F6C15F50096F550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA42D25C1F6C15F50096F550 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492B46F41F6C3B8C00C68D0E /* NaverSpeech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,9 +129,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		492B46F21F6C3B8600C68D0E /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
 		DA42D24E1F6C15F50096F550 = {
 			isa = PBXGroup;
 			children = (
+				492B46F21F6C3B8600C68D0E /* framework */,
 				DA42D2591F6C15F50096F550 /* BaekYangLi */,
 				DA42D2711F6C15F50096F550 /* BaekYangLiTests */,
 				DA42D27C1F6C15F50096F550 /* BaekYangLiUITests */,
@@ -184,6 +211,7 @@
 				DA42D2531F6C15F50096F550 /* Sources */,
 				DA42D2541F6C15F50096F550 /* Frameworks */,
 				DA42D2551F6C15F50096F550 /* Resources */,
+				492B46F61F6C3B8C00C68D0E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -470,11 +498,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 87BH34CAP6;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/framework",
+				);
 				INFOPLIST_FILE = BaekYangLi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BaekYangLi.BaekYangLi;
+				PRODUCT_BUNDLE_IDENTIFIER = O;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -483,11 +518,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 87BH34CAP6;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/framework",
+				);
 				INFOPLIST_FILE = BaekYangLi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BaekYangLi.BaekYangLi;
+				PRODUCT_BUNDLE_IDENTIFIER = O;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
