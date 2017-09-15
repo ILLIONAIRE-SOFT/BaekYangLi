@@ -21,7 +21,7 @@ class VoiceViewController: UIViewController {
     @IBOutlet var destinationLabel: UILabel!
     @IBOutlet var activityIndicator: NVActivityIndicatorView!
     
-    required init?(coder aDecoder: NSCoder) { // NSKRecognizer를 초기화 하는데 필요한 NSKRecognizerConfiguration을 생성
+    required init?(coder aDecoder: NSCoder) {
         let configuration = NSKRecognizerConfiguration(clientID: clientID)
         configuration?.canQuestionDetected = true
         self.speechRecognizer = NSKRecognizer(configuration: configuration)
@@ -36,11 +36,6 @@ class VoiceViewController: UIViewController {
         voiceRecognitionButton.addTarget(self, action: #selector(self.endRecognize), for: .touchUpInside)
         
         initViews()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: Methods
@@ -71,14 +66,12 @@ class VoiceViewController: UIViewController {
             })
         }
     }
-    
 
 }
 
 extension VoiceViewController: NSKRecognizerDelegate {
     
     public func recognizerDidEnterReady(_ aRecognizer: NSKRecognizer!) {
-//        self.statusLabel.text = "녹음 중"
         self.activityIndicator.startAnimating()
     }
     
