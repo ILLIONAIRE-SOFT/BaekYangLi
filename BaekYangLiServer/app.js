@@ -47,6 +47,22 @@ app.get('/getNearStations/:lat/:lng', function(req, res) {
   });
 });
 
+app.get('/getStationsByLine/:line', function(req, res) {
+  var sql = "SELECT *, (SELECT COUNT(*) from station where name = A.name ) AS transfer from station AS A where line = " + req.params.line;
+  console.log(sql);
+  connection.query(sql, function(err, result) {
+    res.send(result);
+  });
+});
+
+app.get('/getStations', function(req, res) {
+  var sql = "SELECT *, (SELECT COUNT(*) from station where name = A.name ) AS transfer from station AS A";
+  console.log(sql);
+  connection.query(sql, function(err, result) {
+    res.send(result);
+  });
+});
+
 app.get('/findRoute/:start/:dest', function(req, res) {
   console.log(req.params);
   res.send(getRoutes(req.params.start, req.params.dest));
