@@ -4,6 +4,7 @@ var express = require('express')
   , server = http.createServer(app);
 var config = require(process.cwd()+'/db/config.js');
 var mysql = require('mysql');
+var urlencode = require('urlencode');
 var connection = mysql.createConnection(config.db);
 connection.connect();
 
@@ -28,6 +29,11 @@ app.get('/getNearStations/:lat/:lng', function(req, res) {
   });
 });
 
+app.get('/findRoute/:start/:dest', function(req, res) {
+  console.log(req.params);
+  res.send(getRoutes(req.params.start, req.params.dest));
+})
+
 server.listen(8000, function() {
   console.log('Express server listening on port ' + server.address().port);
 });
@@ -35,5 +41,14 @@ server.listen(8000, function() {
 function getArrivalTimeOfStation(stationCode) {
   var res = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/1/1/');
   var data = JSON.parse(res.getBody('utf8'));
-  return data.SearchArrivalTimeOfLine2SubwayByFRCodeService.row;
+  var res2 = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/1/2/');
+  var data2 = JSON.parse(res.getBody('utf8'));
+  return concat(data.SearchArrivalTimeOfLine2SubwayByFRCodeService.row,data2.SearchArrivalTimeOfLine2SubwayByFRCodeService.row);
+}
+
+function getRoutes(start, dest) {
+  var res = request('GET', 'http://swopenapi.seoul.go.kr/api/subway/sample/json/shortestRoute/0/5/'+urlencode(start)+'/'+urlencode(dest));
+  console.log(res.getBody('utf8'));
+  var data = JSON.parse(res.getBody('utf8'));
+  return data.shortestRouteList;
 }
