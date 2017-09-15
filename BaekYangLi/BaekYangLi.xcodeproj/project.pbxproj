@@ -10,11 +10,11 @@
 		DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25A1F6C15F50096F550 /* AppDelegate.swift */; };
 		DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25C1F6C15F50096F550 /* ViewController.swift */; };
 		DA42D2601F6C15F50096F550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D25E1F6C15F50096F550 /* Main.storyboard */; };
-		DA42D2631F6C15F50096F550 /* BaekYangLi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA42D2611F6C15F50096F550 /* BaekYangLi.xcdatamodeld */; };
 		DA42D2651F6C15F50096F550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA42D2641F6C15F50096F550 /* Assets.xcassets */; };
 		DA42D2681F6C15F50096F550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D2661F6C15F50096F550 /* LaunchScreen.storyboard */; };
 		DA42D2731F6C15F50096F550 /* BaekYangLiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D2721F6C15F50096F550 /* BaekYangLiTests.swift */; };
 		DA42D27E1F6C15F50096F550 /* BaekYangLiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D27D1F6C15F50096F550 /* BaekYangLiUITests.swift */; };
+		DA42D28C1F6C2C2B0096F550 /* Tab2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		DA42D25A1F6C15F50096F550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA42D25C1F6C15F50096F550 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA42D25F1F6C15F50096F550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DA42D2621F6C15F50096F550 /* BaekYangLi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BaekYangLi.xcdatamodel; sourceTree = "<group>"; };
 		DA42D2641F6C15F50096F550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA42D2671F6C15F50096F550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA42D2691F6C15F50096F550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		DA42D2791F6C15F50096F550 /* BaekYangLiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaekYangLiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA42D27D1F6C15F50096F550 /* BaekYangLiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaekYangLiUITests.swift; sourceTree = "<group>"; };
 		DA42D27F1F6C15F50096F550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tab2.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +102,10 @@
 				DA42D25A1F6C15F50096F550 /* AppDelegate.swift */,
 				DA42D25C1F6C15F50096F550 /* ViewController.swift */,
 				DA42D25E1F6C15F50096F550 /* Main.storyboard */,
+				DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */,
 				DA42D2641F6C15F50096F550 /* Assets.xcassets */,
 				DA42D2661F6C15F50096F550 /* LaunchScreen.storyboard */,
 				DA42D2691F6C15F50096F550 /* Info.plist */,
-				DA42D2611F6C15F50096F550 /* BaekYangLi.xcdatamodeld */,
 			);
 			path = BaekYangLi;
 			sourceTree = "<group>";
@@ -241,6 +241,7 @@
 				DA42D2681F6C15F50096F550 /* LaunchScreen.storyboard in Resources */,
 				DA42D2651F6C15F50096F550 /* Assets.xcassets in Resources */,
 				DA42D2601F6C15F50096F550 /* Main.storyboard in Resources */,
+				DA42D28C1F6C2C2B0096F550 /* Tab2.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +267,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */,
-				DA42D2631F6C15F50096F550 /* BaekYangLi.xcdatamodeld in Sources */,
 				DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,19 +538,6 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		DA42D2611F6C15F50096F550 /* BaekYangLi.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DA42D2621F6C15F50096F550 /* BaekYangLi.xcdatamodel */,
-			);
-			currentVersion = DA42D2621F6C15F50096F550 /* BaekYangLi.xcdatamodel */;
-			path = BaekYangLi.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = DA42D24F1F6C15F50096F550 /* Project object */;
 }
