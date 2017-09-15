@@ -12,7 +12,7 @@
         <!--Voice View Controller-->
         <scene sceneID="ubg-A3-mU4">
             <objects>
-                <viewController id="fgn-uD-bae" customClass="VoiceViewController" customModule="BaekYangLi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Tab2" id="fgn-uD-bae" customClass="VoiceViewController" customModule="BaekYangLi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2kS-g3-BCr"/>
                         <viewControllerLayoutGuide type="bottom" id="Rbo-PA-trq"/>
