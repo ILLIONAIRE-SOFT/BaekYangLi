@@ -22,24 +22,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cET-kL-Ov3">
-                                <rect key="frame" x="126" y="318" width="123" height="30"/>
-                                <state key="normal" title="Voice Recognition"/>
+                                <rect key="frame" x="147.5" y="293" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="sOU-hS-ijT"/>
+                                    <constraint firstAttribute="height" constant="80" id="v9j-b8-A60"/>
+                                </constraints>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3y-4U-8Xe">
-                                <rect key="frame" x="166" y="119" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도착지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3y-4U-8Xe">
+                                <rect key="frame" x="125" y="127" width="125" height="58"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="녹음 중지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbW-z9-ZzI">
+                                <rect key="frame" x="143.5" y="62" width="89" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="JbW-z9-ZzI" firstAttribute="top" secondItem="2kS-g3-BCr" secondAttribute="bottom" constant="42" id="Sk6-zO-M2m"/>
                             <constraint firstItem="cET-kL-Ov3" firstAttribute="centerY" secondItem="9ra-Ci-nwq" secondAttribute="centerY" id="Wxg-CA-Uji"/>
                             <constraint firstItem="cET-kL-Ov3" firstAttribute="centerX" secondItem="9ra-Ci-nwq" secondAttribute="centerX" id="dOe-Y0-xVp"/>
+                            <constraint firstItem="f3y-4U-8Xe" firstAttribute="top" secondItem="JbW-z9-ZzI" secondAttribute="bottom" constant="36" id="fch-a0-8hO"/>
+                            <constraint firstItem="JbW-z9-ZzI" firstAttribute="centerX" secondItem="9ra-Ci-nwq" secondAttribute="centerX" id="wMd-Wd-ww2"/>
+                            <constraint firstItem="f3y-4U-8Xe" firstAttribute="centerX" secondItem="9ra-Ci-nwq" secondAttribute="centerX" id="yDu-Yy-cUn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="destinationLabel" destination="f3y-4U-8Xe" id="bW5-gM-fQg"/>
+                        <outlet property="statusLabel" destination="JbW-z9-ZzI" id="I8O-7I-ZTu"/>
                         <outlet property="voiceRecognitionButton" destination="cET-kL-Ov3" id="sZV-JY-6up"/>
                     </connections>
                 </viewController>
