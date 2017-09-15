@@ -25,7 +25,7 @@ app.get('/getArrivalTimeOfStation/:station_code', function (req, res) {
 app.get('/getStationsByName/:name', function(req ,res) {
   if(req.params.name.trim().endsWith("역"))
     req.params.name = req.params.name.slice(0, req.params.name.length-1);
-  var sql = "SELECT *, (SELECT COUNT(*) from station where name = A.name ) AS transfer from station AS A where name LIKE \"%"+req.params.name+"%\"";
+  var sql = "SELECT *, (SELECT COUNT(*) from station where name = A.name ) AS transfer, name = \""+req.params.name+"\" AS equal from station AS A where name LIKE \"%"+req.params.name+"%\""+" order by equal desc, name";
   console.log(sql);
   connection.query(sql, function(err, result) {
     res.send(result);
