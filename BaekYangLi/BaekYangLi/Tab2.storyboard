@@ -20,8 +20,21 @@
                     <view key="view" contentMode="scaleToFill" id="9ra-Ci-nwq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cET-kL-Ov3">
+                                <rect key="frame" x="126" y="318" width="123" height="30"/>
+                                <state key="normal" title="Voice Recognition"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cET-kL-Ov3" firstAttribute="centerY" secondItem="9ra-Ci-nwq" secondAttribute="centerY" id="Wxg-CA-Uji"/>
+                            <constraint firstItem="cET-kL-Ov3" firstAttribute="centerX" secondItem="9ra-Ci-nwq" secondAttribute="centerX" id="dOe-Y0-xVp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="voiceRecognitionButton" destination="cET-kL-Ov3" id="sZV-JY-6up"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97K-fn-OnA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
