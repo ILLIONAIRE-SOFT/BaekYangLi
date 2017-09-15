@@ -43,7 +43,7 @@ function getArrivalTimeOfStation(stationCode) {
   var data = JSON.parse(res.getBody('utf8'));
   var res2 = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/1/2/');
   var data2 = JSON.parse(res.getBody('utf8'));
-  return concat(data.SearchArrivalTimeOfLine2SubwayByFRCodeService.row,data2.SearchArrivalTimeOfLine2SubwayByFRCodeService.row);
+  return data.SearchArrivalTimeOfLine2SubwayByFRCodeService.row.concat(data2.SearchArrivalTimeOfLine2SubwayByFRCodeService.row);
 }
 
 function getRoutes(start, dest) {
