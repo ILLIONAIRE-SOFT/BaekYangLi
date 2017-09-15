@@ -10,6 +10,8 @@
 		492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B46F01F6C37F100C68D0E /* VoiceViewController.swift */; };
 		492B46F41F6C3B8C00C68D0E /* NaverSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */; };
 		492B46F51F6C3B8C00C68D0E /* NaverSpeech.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		492B46FB1F6C3EBA00C68D0E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 492B46F91F6C3EBA00C68D0E /* Info.plist */; };
+		492B46FC1F6C3EBA00C68D0E /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B46FA1F6C3EBA00C68D0E /* Languages.swift */; };
 		DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25A1F6C15F50096F550 /* AppDelegate.swift */; };
 		DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25C1F6C15F50096F550 /* ViewController.swift */; };
 		DA42D2601F6C15F50096F550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D25E1F6C15F50096F550 /* Main.storyboard */; };
@@ -55,6 +57,9 @@
 /* Begin PBXFileReference section */
 		492B46F01F6C37F100C68D0E /* VoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoiceViewController.swift; path = ViewControllers/VoiceViewController.swift; sourceTree = "<group>"; };
 		492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NaverSpeech.framework; sourceTree = "<group>"; };
+		492B46F81F6C3EBA00C68D0E /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		492B46F91F6C3EBA00C68D0E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		492B46FA1F6C3EBA00C68D0E /* Languages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		DA42D2571F6C15F50096F550 /* BaekYangLi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaekYangLi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA42D25A1F6C15F50096F550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA42D25C1F6C15F50096F550 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,9 +142,20 @@
 			path = framework;
 			sourceTree = "<group>";
 		};
+		492B46F71F6C3EBA00C68D0E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				492B46F81F6C3EBA00C68D0E /* Common.h */,
+				492B46F91F6C3EBA00C68D0E /* Info.plist */,
+				492B46FA1F6C3EBA00C68D0E /* Languages.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		DA42D24E1F6C15F50096F550 = {
 			isa = PBXGroup;
 			children = (
+				492B46F71F6C3EBA00C68D0E /* Common */,
 				492B46F21F6C3B8600C68D0E /* framework */,
 				DA42D2591F6C15F50096F550 /* BaekYangLi */,
 				DA42D2711F6C15F50096F550 /* BaekYangLiTests */,
@@ -315,6 +331,7 @@
 				DA42D2681F6C15F50096F550 /* LaunchScreen.storyboard in Resources */,
 				DA42D2651F6C15F50096F550 /* Assets.xcassets in Resources */,
 				DA42D2601F6C15F50096F550 /* Main.storyboard in Resources */,
+				492B46FB1F6C3EBA00C68D0E /* Info.plist in Resources */,
 				DA42D28C1F6C2C2B0096F550 /* Tab2.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +361,7 @@
 				492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */,
 				DA42D28F1F6C305D0096F550 /* LocationService.swift in Sources */,
 				DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */,
+				492B46FC1F6C3EBA00C68D0E /* Languages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +524,7 @@
 				INFOPLIST_FILE = BaekYangLi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = O;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BaekYangLi.BaekYangLi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -526,7 +544,7 @@
 				INFOPLIST_FILE = BaekYangLi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = O;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BaekYangLi.BaekYangLi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
