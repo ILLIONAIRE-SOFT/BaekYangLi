@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,37 +29,49 @@
                                 </constraints>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도착지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3y-4U-8Xe">
-                                <rect key="frame" x="125" y="127" width="125" height="58"/>
+                                <rect key="frame" x="125" y="128" width="125" height="58"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="녹음 중지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbW-z9-ZzI">
-                                <rect key="frame" x="143.5" y="62" width="89" height="29"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2h-9g-h2a" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="127.5" y="28" width="120" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="cIW-SN-Bng"/>
+                                    <constraint firstAttribute="height" constant="80" id="nTw-43-B3N"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballClipRotate"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JbW-z9-ZzI" firstAttribute="top" secondItem="2kS-g3-BCr" secondAttribute="bottom" constant="42" id="Sk6-zO-M2m"/>
+                            <constraint firstItem="f3y-4U-8Xe" firstAttribute="top" secondItem="z2h-9g-h2a" secondAttribute="bottom" constant="20" id="KF4-aq-45I"/>
+                            <constraint firstItem="z2h-9g-h2a" firstAttribute="centerX" secondItem="9ra-Ci-nwq" secondAttribute="centerX" id="PDl-s8-VJc"/>
+                            <constraint firstItem="z2h-9g-h2a" firstAttribute="top" secondItem="2kS-g3-BCr" secondAttribute="bottom" constant="8" id="WkY-hs-XM2"/>
                             <constraint firstItem="cET-kL-Ov3" firstAttribute="centerY" secondItem="9ra-Ci-nwq" secondAttribute="centerY" id="Wxg-CA-Uji"/>
                             <constraint firstItem="cET-kL-Ov3" firstAttribute="centerX" secondItem="9ra-Ci-nwq" secondAttribute="centerX" id="dOe-Y0-xVp"/>
-                            <constraint firstItem="f3y-4U-8Xe" firstAttribute="top" secondItem="JbW-z9-ZzI" secondAttribute="bottom" constant="36" id="fch-a0-8hO"/>
-                            <constraint firstItem="JbW-z9-ZzI" firstAttribute="centerX" secondItem="9ra-Ci-nwq" secondAttribute="centerX" id="wMd-Wd-ww2"/>
+                            <constraint firstItem="z2h-9g-h2a" firstAttribute="centerX" secondItem="9ra-Ci-nwq" secondAttribute="centerX" id="wy5-Fq-r1f"/>
                             <constraint firstItem="f3y-4U-8Xe" firstAttribute="centerX" secondItem="9ra-Ci-nwq" secondAttribute="centerX" id="yDu-Yy-cUn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="z2h-9g-h2a" id="MOY-RN-cEb"/>
                         <outlet property="destinationLabel" destination="f3y-4U-8Xe" id="bW5-gM-fQg"/>
-                        <outlet property="statusLabel" destination="JbW-z9-ZzI" id="I8O-7I-ZTu"/>
                         <outlet property="voiceRecognitionButton" destination="cET-kL-Ov3" id="sZV-JY-6up"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97K-fn-OnA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-87" y="-71"/>
+            <point key="canvasLocation" x="-87.200000000000003" y="-71.514242878560722"/>
         </scene>
     </scenes>
 </document>
