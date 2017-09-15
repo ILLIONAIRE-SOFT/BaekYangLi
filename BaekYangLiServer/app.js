@@ -23,7 +23,8 @@ app.get('/getArrivalTimeOfStation/:station_code', function (req, res) {
 });
 
 app.get('/getStationInfo/:station_code', function(req ,res) {
-  var sql = "SELECT *, (SELECT COUNT(*) from station where station_code = A.station_code ) AS transfer from station AS A where station_code = "+req.params.station_code;
+  var sql = "SELECT *, (SELECT COUNT(*) from station where name = A.name ) AS transfer from station AS A where station_code = "+req.params.station_code;
+  console.log(sql);
   connection.query(sql, function(err, result) {
     res.send(result);
   });
