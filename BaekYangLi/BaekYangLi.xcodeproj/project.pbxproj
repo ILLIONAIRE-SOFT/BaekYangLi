@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B46F01F6C37F100C68D0E /* VoiceViewController.swift */; };
 		DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25A1F6C15F50096F550 /* AppDelegate.swift */; };
 		DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25C1F6C15F50096F550 /* ViewController.swift */; };
 		DA42D2601F6C15F50096F550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D25E1F6C15F50096F550 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		492B46F01F6C37F100C68D0E /* VoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoiceViewController.swift; path = ViewControllers/VoiceViewController.swift; sourceTree = "<group>"; };
 		DA42D2571F6C15F50096F550 /* BaekYangLi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaekYangLi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA42D25A1F6C15F50096F550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA42D25C1F6C15F50096F550 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		492B46EC1F6C379600C68D0E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				492B46F01F6C37F100C68D0E /* VoiceViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */,
+				492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */,
 				DA42D28F1F6C305D0096F550 /* LocationService.swift in Sources */,
 				DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */,
 			);
