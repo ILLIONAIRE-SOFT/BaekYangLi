@@ -78,6 +78,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492B46EC1F6C379600C68D0E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		492B46ED1F6C37A300C68D0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		492B46EE1F6C37A700C68D0E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		492B46EF1F6C37AE00C68D0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA42D2641F6C15F50096F550 /* Assets.xcassets */,
+				DA42D2691F6C15F50096F550 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		DA42D24E1F6C15F50096F550 = {
 			isa = PBXGroup;
 			children = (
@@ -101,12 +131,14 @@
 		DA42D2591F6C15F50096F550 /* BaekYangLi */ = {
 			isa = PBXGroup;
 			children = (
+				492B46EF1F6C37AE00C68D0E /* Supporting Files */,
+				492B46EE1F6C37A700C68D0E /* Utilities */,
+				492B46ED1F6C37A300C68D0E /* Model */,
+				492B46EC1F6C379600C68D0E /* ViewControllers */,
 				DA42D25A1F6C15F50096F550 /* AppDelegate.swift */,
 				DA42D25C1F6C15F50096F550 /* ViewController.swift */,
 				DA42D28E1F6C305D0096F550 /* LocationService.swift */,
 				DA42D28D1F6C2F550096F550 /* StoryBoard */,
-				DA42D2641F6C15F50096F550 /* Assets.xcassets */,
-				DA42D2691F6C15F50096F550 /* Info.plist */,
 			);
 			path = BaekYangLi;
 			sourceTree = "<group>";
@@ -532,6 +564,7 @@
 				DA42D2841F6C15F50096F550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA42D2851F6C15F50096F550 /* Build configuration list for PBXNativeTarget "BaekYangLiTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +573,7 @@
 				DA42D2871F6C15F50096F550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA42D2881F6C15F50096F550 /* Build configuration list for PBXNativeTarget "BaekYangLiUITests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +582,7 @@
 				DA42D28A1F6C15F50096F550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
