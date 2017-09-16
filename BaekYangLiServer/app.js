@@ -104,7 +104,7 @@ app.get('/getTrains', function(req, res) {
   });
 })
 
-app.get('/getTrainsLive', function(req, res) {
+app.get('/getTrainsLive/:line', function(req, res) {
   var startParse = 0;
   var line = 0;
   var infos = new Object();
@@ -128,23 +128,26 @@ app.get('/getTrainsLive', function(req, res) {
                   }
               }
           }
-          console.log(name, attribs);
       },
       ontext: function(text){
-          console.log(text);
       },
       onclosetag: function(tagname){
-          console.log(tagname);
       }
   }, {decodeEntities: true});
   parser.write(data);
   parser.end();
+  var line = req.params.line;
   for(var i = 1; i <= 8; i++) {
+    if(line != null && line != i)
+      continue;
     for(var j = 0; j < infos[i].length; j++) {
       infos[i][j] = getInfo(i,infos[i][j]);
     }
   }
-  res.send(infos);
+  if(line != "all")
+    res.send(infos[line]);
+  else 
+    res.send(infos);
 });
 
 server.listen(8000, function() {
@@ -203,10 +206,30 @@ function getInfo(line, rawData) {
       rawData.map_station_code = allStations[i].map_station_code;
     } else if(allStations[i].line == line && allStations[i].name.includes(rawData.dest)) {
       rawData.dest_code = allStations[i].station_code;
+      rawData.map_dest_code = allStations[i].station_code;
     }
   delete(rawData.class);
   delete(rawData.title);
   delete(rawData["data-statntcd"]);
-  rawData.isUp = rawData.dest_code > rawData.station_code ? 1 : 2;
+  rawData.isUp = rawData.map_dest_code > rawData.map_station_code ? 2 : 1;
+  var percentage = 0;
+  switch(rawData.status) {
+      case "도착":
+          percentage = 90;
+          break;
+      case "진입":
+          percentage = 80;
+          break;
+      case "접근":
+          percentage = 60;
+          break;
+      case "이동":
+          percentage = 40;
+          break;
+      case "출발":
+          percentage = 20;
+          break;
+  }
+  rawData.percentage = percentage;
   return rawData;
 }
