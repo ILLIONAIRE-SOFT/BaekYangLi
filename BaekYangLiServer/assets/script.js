@@ -1,17 +1,36 @@
 var x = document.getElementsByTagName("circle");
 var svg = d3.select("body").select("svg#map");
+var lines = document.getElementsByClassName("line");
+var colors = new Object();
+for(var i = 0; i < lines.length; i++) {
+    var color = lines[i].getAttribute("stroke");
+    var paths = lines[i].getElementsByClassName("path");
+    var line = paths[0].getAttribute("class").split(" ")[1];
+    colors[line] = color;
+}
 
 setTimeout(function() {
     x = document.getElementsByTagName("circle");
     svg = d3.select("body").select("svg#map");
-}, 500);
-
-function findStationColor(num) {
-    try {
-        return x["M"+num].getAttribute("stroke");
-    } catch (err) {
-        return "#052f93";
+    lines = document.getElementsByClassName("line");
+    colors = new Object();
+    for(var i = 0; i < lines.length; i++) {
+        var color = lines[i].getAttribute("stroke");
+        var paths = lines[i].getElementsByClassName("path");
+        var line = paths[0].getAttribute("class").split(" ")[1];
+        colors[line] = color;
     }
+}, 700);
+
+//Deprecated
+function findStationColor(path) {
+    var line = path.node().getAttribute("class");
+}
+
+function findPathColor(path) {
+    console.log(path);
+    var line = path.node().getAttribute("class").split(" ")[1];
+    return colors[line];
 }
 
 function findPath(start, dest) {
@@ -29,7 +48,8 @@ function addTrain(trainNum, start, dest, duration, percentage) {
     var reverse =  start > dest ? 1 : 0;
     var path = findPath(start,dest);
     var startPoint = pathStartPoint(path);
-    var color = findStationColor(start);
+    console.log(start+" "+dest);
+    var color = findPathColor(path);
     marker.attr("width", 10).attr("height",10)
       .attr("transform", "translate(" + startPoint + ")").attr("fill",color);
     transition(path,marker,duration, start > dest ? 1 : 0);
@@ -74,7 +94,7 @@ setInterval(function(){
     ss = result;
     console.log(result);
     for(var i = 0; i < result.length; i++) {
-        console.log("addTrain("+result[i].end_station+","+String(result[i].mapCode)+","+getNextStation(result[i].mapCode,result[i].inout_tag)+",60000,0)");
+        console.log("addTrain("+result[i].station_num+result[i].end_station+",\""+String(result[i].mapCode)+"\",\""+getNextStation(result[i].mapCode,result[i].inout_tag)+"\",60000,0)");
         addTrain(result[i].station_num+result[i].end_station,String(result[i].mapCode),getNextStation(result[i].mapCode),120000,0);
     }
 },1000);

@@ -92,7 +92,7 @@ app.get('/findRoute/:start/:dest', function(req, res) {
 })
 
 app.get('/getTrains', function(req, res) {
-  var sql = "SELECT * from timetable where TIME_TO_SEC(left_time) >= TIME_TO_SEC(NOW()) AND TIME_TO_SEC(left_time) <= TIME_TO_SEC(NOW())+10 AND week_tag = "+getDayType();
+  var sql = "SELECT * from timetable where TIME_TO_SEC(left_time) >= TIME_TO_SEC(NOW()) AND TIME_TO_SEC(left_time) <= TIME_TO_SEC(NOW())+1 AND week_tag = "+getDayType();
   console.log(sql);
   connection.query(sql, function(err, result) {
     for(var i = 0; i < result.length; i++) {
