@@ -63,10 +63,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let station = StationStore.shared.groupedStations[section][0]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewHeaderCell") as! HomeTableViewHeaderCell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewHeaderCell") as! HomeTableViewHeaderCell
+        let cell = HomeTableViewHeaderCell(style: .default, reuseIdentifier: "HomeTableViewHeaderCell", station: station)
         
-        cell.initCell(with: station)
-        cell.backgroundColor = .red
+//        cell.backgroundColor = .red
         
         return cell
     }
