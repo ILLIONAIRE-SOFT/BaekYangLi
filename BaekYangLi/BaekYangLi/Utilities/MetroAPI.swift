@@ -59,9 +59,11 @@ struct MetroAPI {
             case .success:
                 if let destinationInfos = response.result.value {
                     completion(destinationInfos)
+                } else {
+                    completion([])
                 }
             case .failure(let err):
-                print("Error")
+                completion([])
                 print(err)
                 break
             }
