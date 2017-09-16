@@ -28,7 +28,6 @@
 		DA42D28C1F6C2C2B0096F550 /* Tab2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */; };
 		DA42D28F1F6C305D0096F550 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D28E1F6C305D0096F550 /* LocationService.swift */; };
 		DAB87E021F6CF50C00EFF83B /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB87E011F6CF50C00EFF83B /* Station.swift */; };
-		DAB87E041F6CFD2D00EFF83B /* MetroStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB87E031F6CFD2D00EFF83B /* MetroStore.swift */; };
 		EB28AD1940FA3385714B3677 /* Pods_BaekYangLi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C83A8E431E89359702BBC3 /* Pods_BaekYangLi.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +97,6 @@
 		DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tab2.storyboard; sourceTree = "<group>"; };
 		DA42D28E1F6C305D0096F550 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		DAB87E011F6CF50C00EFF83B /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
-		DAB87E031F6CFD2D00EFF83B /* MetroStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				DAB87E011F6CF50C00EFF83B /* Station.swift */,
-				DAB87E031F6CFD2D00EFF83B /* MetroStore.swift */,
 				49EC75E61F6D34BE0039D7E5 /* StationStore.swift */,
 			);
 			name = Model;
@@ -590,7 +587,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAB87E041F6CFD2D00EFF83B /* MetroStore.swift in Sources */,
 				DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */,
 				4916181B1F6CBFC40008851F /* MetroCourseViewController.swift in Sources */,
 				492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */,
