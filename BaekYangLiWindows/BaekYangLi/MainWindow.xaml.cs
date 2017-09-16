@@ -29,6 +29,7 @@ namespace BaekYangLi
         public MainWindow()
         {
             InitializeComponent();
+            InsideFrame.Navigate(new MapPage());
             GetGPS();
         }
 
@@ -55,6 +56,7 @@ namespace BaekYangLi
                 JArray jo = JArray.Parse(GetResponseString(url));
 
                 GW.Stop();
+                
             }
 
         }
@@ -66,5 +68,6 @@ namespace BaekYangLi
             // 웹 URL을 통해 String 데이터로 반환
             return client.DownloadString(url);
         }
+        
     }
 }

@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BaekYangLi"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="400" Width="600" Background="{x:Null}">
+    <Grid Background="#FFDDDDDD">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1"  Background="White" Margin="0,0,0,0.5" >
+            <Frame x:Name="InsideFrame" NavigationUIVisibility="Hidden"/>
+        </Grid>
+
     </Grid>
 </Window>
