@@ -24,26 +24,6 @@ class StationStore {
                 return first.distance! < second.distance!
             })
             
-//            var stationGroup = [Station]()
-//            var previousStationName: String = ""
-//            for station in nearestStations {
-//                var stationGroup = [Station]()
-//                if station.name == previousStationName {
-//                    stationGroup.append(station)
-//                } else {
-//                    groupedStations.append(stationGroup)
-//                }
-//                
-//                
-//                previousStationName = station.name
-//                
-//            }
-//            while groupedStations.count < 3 {
-//                
-//                
-//                
-//            }
-            
             
             for station in self.nearestStations {
                 print(station.name!)
