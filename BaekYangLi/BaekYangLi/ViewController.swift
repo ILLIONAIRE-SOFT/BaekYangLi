@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        MetroStore.fetchStations()
+//        MetroStore.fetchStations()
     }
 
     override func didReceiveMemoryWarning() {

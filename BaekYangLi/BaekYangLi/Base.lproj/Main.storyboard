@@ -34,32 +34,24 @@
                                     <constraint firstAttribute="height" constant="128" id="BPR-Hp-pKd"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="1bF-9b-Rw3">
-                                <rect key="frame" x="0.0" y="495" width="375" height="44"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </searchBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHR-lm-oa0">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tHR-lm-oa0">
                                 <rect key="frame" x="0.0" y="20" width="375" height="475"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1bF-9b-Rw3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="09z-sM-V44"/>
                             <constraint firstItem="tHR-lm-oa0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3vT-Sh-fWy"/>
                             <constraint firstAttribute="trailing" secondItem="kBf-wY-GHf" secondAttribute="trailing" id="4gF-VL-3WD"/>
                             <constraint firstAttribute="trailing" secondItem="tHR-lm-oa0" secondAttribute="trailing" id="DKr-qO-kzk"/>
                             <constraint firstItem="tHR-lm-oa0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Jhl-vF-yJ2"/>
-                            <constraint firstAttribute="trailing" secondItem="1bF-9b-Rw3" secondAttribute="trailing" id="UXg-Bw-bAO"/>
-                            <constraint firstItem="kBf-wY-GHf" firstAttribute="top" secondItem="1bF-9b-Rw3" secondAttribute="bottom" id="dYs-96-SIc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kBf-wY-GHf" secondAttribute="bottom" id="mvk-DO-pyl"/>
                             <constraint firstItem="kBf-wY-GHf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ty5-vg-YcM"/>
-                            <constraint firstItem="1bF-9b-Rw3" firstAttribute="top" secondItem="tHR-lm-oa0" secondAttribute="bottom" id="yd4-Nn-AkJ"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="-161" y="137"/>
         </scene>
     </scenes>
 </document>
