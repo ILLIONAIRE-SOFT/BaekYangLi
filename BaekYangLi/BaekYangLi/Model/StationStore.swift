@@ -42,6 +42,7 @@ class StationStore {
                 }
             }
             self.groupedStations.append(tempStations)
+            completion()
         }
     }
 }

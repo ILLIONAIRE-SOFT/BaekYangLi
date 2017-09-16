@@ -29,6 +29,8 @@
 		DA42D27E1F6C15F50096F550 /* BaekYangLiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D27D1F6C15F50096F550 /* BaekYangLiUITests.swift */; };
 		DA42D28C1F6C2C2B0096F550 /* Tab2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */; };
 		DA4634A01F6D4A4900ABC39E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46349F1F6D4A4900ABC39E /* HomeTableViewCell.swift */; };
+		DA4634A21F6D540400ABC39E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4634A11F6D540400ABC39E /* SplashViewController.swift */; };
+		DA4634A41F6D636300ABC39E /* HomeTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4634A31F6D636300ABC39E /* HomeTableViewHeaderCell.swift */; };
 		DAB87E021F6CF50C00EFF83B /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB87E011F6CF50C00EFF83B /* Station.swift */; };
 		EB28AD1940FA3385714B3677 /* Pods_BaekYangLi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C83A8E431E89359702BBC3 /* Pods_BaekYangLi.framework */; };
 /* End PBXBuildFile section */
@@ -100,6 +102,8 @@
 		DA42D27F1F6C15F50096F550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tab2.storyboard; sourceTree = "<group>"; };
 		DA46349F1F6D4A4900ABC39E /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewCell.swift; path = View/HomeTableViewCell.swift; sourceTree = "<group>"; };
+		DA4634A11F6D540400ABC39E /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = ViewControllers/SplashViewController.swift; sourceTree = "<group>"; };
+		DA4634A31F6D636300ABC39E /* HomeTableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewHeaderCell.swift; path = View/HomeTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		DAB87E011F6CF50C00EFF83B /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				491618171F6CB87E0008851F /* BaseViewController.swift */,
+				DA4634A11F6D540400ABC39E /* SplashViewController.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 			children = (
 				DA46349F1F6D4A4900ABC39E /* HomeTableViewCell.swift */,
 				49EC75EA1F6D6EDA0039D7E5 /* StationCourseCell.swift */,
+				DA4634A31F6D636300ABC39E /* HomeTableViewHeaderCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -607,11 +613,15 @@
 				DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */,
 				491618151F6C4CD80008851F /* MetroAPI.swift in Sources */,
 				49EC75EB1F6D6EDA0039D7E5 /* StationCourseCell.swift in Sources */,
+				DA4634A41F6D636300ABC39E /* HomeTableViewHeaderCell.swift in Sources */,
+        
+        
 				491618181F6CB87E0008851F /* BaseViewController.swift in Sources */,
 				DA4634A01F6D4A4900ABC39E /* HomeTableViewCell.swift in Sources */,
 				492B46FC1F6C3EBA00C68D0E /* Languages.swift in Sources */,
 				DAB87E021F6CF50C00EFF83B /* Station.swift in Sources */,
 				49EC75E71F6D34BE0039D7E5 /* StationStore.swift in Sources */,
+				DA4634A21F6D540400ABC39E /* SplashViewController.swift in Sources */,
 				49EC75E91F6D43E70039D7E5 /* DestinationInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
