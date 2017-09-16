@@ -15,6 +15,10 @@ class DestinationInfo: Mappable {
     var statnTnm: String?
     var shtTransferMsg: String?
     var shtStatnNm: String?
+    var shtStatnId: [String]?
+    var shtStatnCnt: String?
+    var shtTravelTm: String?
+    var shtTransferCnt: String?
     
     required init?(map: Map) {
         
@@ -25,5 +29,9 @@ class DestinationInfo: Mappable {
         statnTnm <- map["statnTnm"]
         shtTransferMsg <- map["shtTransferMsg"]
         shtStatnNm <- map["shtStatnNm"]
+        shtStatnId <- map["shtStatnId"]
+        shtStatnCnt <- map["shtStatnCnt"]
+        shtTravelTm <- map["shtTravelTm"]
+        shtTransferCnt <- map["shtTransferCnt"]
     }
 }
