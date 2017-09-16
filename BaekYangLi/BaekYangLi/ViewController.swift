@@ -33,6 +33,12 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         print(StationStore.shared.groupedStations)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "modalARKitVC" {
+            let ARKitVC = segue.destination as! ARViewController
+            ARViewController.coordinate 
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {

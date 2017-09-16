@@ -78,6 +78,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIB-iW-QzQ">
+                                                    <rect key="frame" x="178" y="23" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <segue destination="WUe-FC-h9U" kind="presentation" identifier="modalARKitVC" id="i0u-hk-zg9"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <connections>
                                                 <outlet property="distance" destination="G3s-4H-KVy" id="VMh-QL-VJ6"/>
@@ -221,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kp0-xe-NXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598" y="27"/>
+            <point key="canvasLocation" x="430" y="27"/>
         </scene>
     </scenes>
 </document>
