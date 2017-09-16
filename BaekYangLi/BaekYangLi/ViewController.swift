@@ -27,6 +27,8 @@ class HomeViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +58,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
         cell.initCell(with: station)
         cell.layer.cornerRadius = 10
+        cell.backgroundColor = UIColor.lightGray
         
         return cell
     }
@@ -66,7 +69,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewHeaderCell") as! HomeTableViewHeaderCell
         
         cell.initCell(with: station)
-        cell.backgroundColor = .red
         
         return cell
     }

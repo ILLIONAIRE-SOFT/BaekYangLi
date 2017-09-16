@@ -16,7 +16,8 @@ class HomeTableViewHeaderCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        layoutIfNeeded()
+        layoutSubviews()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
