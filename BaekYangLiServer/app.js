@@ -196,9 +196,16 @@ function getInfo(line, rawData) {
   rawData.line = line;
   rawData.status = rawData.title.split(" ")[3];
   rawData.dest = rawData.title.split(" ")[4];
+  rawData.dest = rawData.dest.slice(0,rawData.dest.length-1);
   for(var i = 0; i < allStations.length; i++)
     if(allStations[i].line == line && allStations[i].name == rawData.stnName) {
       rawData.station_code = allStations[i].station_code;
+    } else if(allStations[i].line == line && allStations[i].name.includes(rawData.dest)) {
+      rawData.dest_code = allStations[i].station_code;
     }
+  delete(rawData.class);
+  delete(rawData.title);
+  delete(rawData["data-statntcd"]);
+  rawData.isUp = rawData.dest_code > rawData.station_code ? 1 : 0;
   return rawData;
 }
