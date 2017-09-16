@@ -4,25 +4,28 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>NVActivityIndicatorView.xcscheme</key>
+		<key>BaekYangLi.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Pods-BaekYangLi.xcscheme</key>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>DA42D2561F6C15F50096F550</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>primary</key>
+			<true/>
 		</dict>
-		<key>Pods-BaekYangLiTests.xcscheme</key>
+		<key>DA42D26D1F6C15F50096F550</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>primary</key>
+			<true/>
 		</dict>
-		<key>Pods-BaekYangLiUITests.xcscheme</key>
+		<key>DA42D2781F6C15F50096F550</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
