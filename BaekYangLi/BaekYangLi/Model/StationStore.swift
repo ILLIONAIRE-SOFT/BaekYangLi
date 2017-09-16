@@ -13,6 +13,7 @@ class StationStore {
     static let shared = StationStore()
     
     private(set) var nearestStations: [Station] = []
+    private(set) var groupedStations: [[Station]] = []
     
     public func getNearestStations(completion: @escaping () -> ()) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -22,6 +23,7 @@ class StationStore {
             self.nearestStations.sort(by: { (first, second) -> Bool in
                 return first.distance! < second.distance!
             })
+            
             
             for station in self.nearestStations {
                 print(station.name!)
