@@ -11,12 +11,12 @@ import ObjectMapper
 
 class Station: Mappable {
     var station_id: Int?
-    var station_code: Int?
-    var line: Int?
+    var station_code: String?
+    var line: String?
     var name: String?
     var lat: Double?
     var lng: Double?
-    var map_station_code: Int?
+    var map_station_code: String?
     var distance: Double?
     var up: [StationTimeInfo]?
     var down: [StationTimeInfo]?
