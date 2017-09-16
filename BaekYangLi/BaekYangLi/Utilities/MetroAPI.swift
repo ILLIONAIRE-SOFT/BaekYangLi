@@ -27,9 +27,9 @@ struct MetroAPI {
             completion()
         }
     }
-    
+    //\(server_url)\(APIType.getNearestStations)/37.5612/126.9942
     static func getNearestStations(completion: @escaping ([Station]) -> ()) {
-        Alamofire.request("\(server_url)\(APIType.getNearestStations)/37.5612/126.9942", method: .get, parameters: nil, encoding: JSONEncoding.default).responseArray { (response: DataResponse<[Station]>) in
+        Alamofire.request("http://172.16.0.35:8000/test", method: .get, parameters: nil, encoding: JSONEncoding.default).responseArray { (response: DataResponse<[Station]>) in
             switch response.result {
             case .success:
                 if let stations = response.result.value {
@@ -59,9 +59,11 @@ struct MetroAPI {
             case .success:
                 if let destinationInfos = response.result.value {
                     completion(destinationInfos)
+                } else {
+                    completion([])
                 }
             case .failure(let err):
-                print("Error")
+                completion([])
                 print(err)
                 break
             }

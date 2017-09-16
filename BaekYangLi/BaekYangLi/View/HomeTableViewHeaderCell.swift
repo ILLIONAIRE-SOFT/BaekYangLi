@@ -11,8 +11,8 @@ import UIKit
 
 class HomeTableViewHeaderCell: UITableViewCell {
     
-    @IBOutlet var stationName: UILabel!
     @IBOutlet var distance: UILabel!
+    @IBOutlet var stationName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

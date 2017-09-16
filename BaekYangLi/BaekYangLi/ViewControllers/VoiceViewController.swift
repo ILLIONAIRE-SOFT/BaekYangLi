@@ -85,13 +85,21 @@ extension VoiceViewController: NSKRecognizerDelegate {
             self.destinationLabel.text = result
             
             startLoading()
-            MetroAPI.getDestinationInfos(destination: "충무로", completion: { (destinationInfos) in
+            MetroAPI.getDestinationInfos(destination: result, completion: { (destinationInfos) in
                 self.stopLoading()
                 
                 let tabTwoSB = UIStoryboard(name: "Tab2", bundle: nil)
                 let metroCourseVC = tabTwoSB.instantiateViewController(withIdentifier: "MetroCourseViewController") as! MetroCourseViewController
-                metroCourseVC.destinationInfo = destinationInfos[0]
-                self.present(metroCourseVC, animated: true, completion: nil)
+                
+                if destinationInfos.count != 0 {
+                    metroCourseVC.destinationInfo = destinationInfos[0]
+                    self.present(metroCourseVC, animated: true, completion: nil)
+                } else {
+                    let alertController = UIAlertController(title: nil, message: "역이 존재하지 않습니다.", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Done", style: .default, handler: nil)
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
+                }
             })
         }
     }
