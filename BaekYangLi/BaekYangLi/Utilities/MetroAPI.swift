@@ -10,4 +10,11 @@ import Foundation
 
 struct MetroAPI {
     
+    static func getDestinationInfo(completion: @escaping () -> ()) {
+        
+        let when = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            completion()
+        }
+    }
 }
