@@ -43,6 +43,7 @@ class HomeTableViewCell: UITableViewCell {
         
         self.downFirstLeftTime.text = getTime(station.down?[0].arriveTime)
         self.downFirstDestination.text =  station.down?[0].destinationName
+        
         self.downSecondLeftTime.text = getTime(station.down?[1].arriveTime)
         self.downSecondDestination.text =  station.down?[1].destinationName
     }
