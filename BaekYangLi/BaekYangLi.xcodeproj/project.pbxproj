@@ -22,7 +22,7 @@
 		DA42D2731F6C15F50096F550 /* BaekYangLiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D2721F6C15F50096F550 /* BaekYangLiTests.swift */; };
 		DA42D27E1F6C15F50096F550 /* BaekYangLiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D27D1F6C15F50096F550 /* BaekYangLiUITests.swift */; };
 		DA42D28C1F6C2C2B0096F550 /* Tab2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */; };
-		DA42D28F1F6C305D0096F550 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D28E1F6C305D0096F550 /* LocationService.swift */; };
+		DA85B5C81F6CB0D2003C4436 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85B5C71F6CB0D2003C4436 /* ARViewController.swift */; };
 		EB28AD1940FA3385714B3677 /* Pods_BaekYangLi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C83A8E431E89359702BBC3 /* Pods_BaekYangLi.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +86,7 @@
 		DA42D27D1F6C15F50096F550 /* BaekYangLiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaekYangLiUITests.swift; sourceTree = "<group>"; };
 		DA42D27F1F6C15F50096F550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tab2.storyboard; sourceTree = "<group>"; };
-		DA42D28E1F6C305D0096F550 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		DA85B5C71F6CB0D2003C4436 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = ViewControllers/ARViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				492B46F01F6C37F100C68D0E /* VoiceViewController.swift */,
+				DA85B5C71F6CB0D2003C4436 /* ARViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -223,7 +224,6 @@
 				492B46EC1F6C379600C68D0E /* ViewControllers */,
 				DA42D25A1F6C15F50096F550 /* AppDelegate.swift */,
 				DA42D25C1F6C15F50096F550 /* ViewController.swift */,
-				DA42D28E1F6C305D0096F550 /* LocationService.swift */,
 				DA42D28D1F6C2F550096F550 /* StoryBoard */,
 			);
 			path = BaekYangLi;
@@ -414,7 +414,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		38A277710052E3FE76C430AC /* [CP] Copy Pods Resources */ = {
@@ -489,7 +489,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B26CFB5A26A657F5CA182C1A /* [CP] Embed Pods Frameworks */ = {
@@ -534,7 +534,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -546,9 +546,9 @@
 			files = (
 				DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */,
 				492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */,
-				DA42D28F1F6C305D0096F550 /* LocationService.swift in Sources */,
 				DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */,
 				492B46FC1F6C3EBA00C68D0E /* Languages.swift in Sources */,
+				DA85B5C81F6CB0D2003C4436 /* ARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,7 +644,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -689,7 +689,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -710,7 +710,7 @@
 					"$(PROJECT_DIR)/framework",
 				);
 				INFOPLIST_FILE = BaekYangLi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BaekYangLi.BaekYangLi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -731,7 +731,7 @@
 					"$(PROJECT_DIR)/framework",
 				);
 				INFOPLIST_FILE = BaekYangLi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BaekYangLi.BaekYangLi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
