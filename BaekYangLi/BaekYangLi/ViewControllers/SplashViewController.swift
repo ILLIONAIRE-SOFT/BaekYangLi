@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import CoreLocation
+
 
 class SplashViewController: UIViewController {
+    
+    let locationManager = CLLocationManager()
+    var loadLocation : Bool = true
+    var currentLocation = CLLocationCoordinate2D()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -22,13 +32,9 @@ class SplashViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        StationStore.shared.getNearestStations {
-            self.presentMainViewController()
-        }
     }
     
-    private func presentMainViewController() {
+    fileprivate func presentMainViewController() {
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         
         let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "Main")
@@ -36,3 +42,27 @@ class SplashViewController: UIViewController {
         appDelegate.window?.makeKeyAndVisible()
     }
 }
+
+// MARK: - CLLocationManagerDelegate
+extension SplashViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if loadLocation {
+            CLGeocoder().reverseGeocodeLocation(manager.location!) { (placemarks, error) in
+                if (error != nil) {
+                    return
+                }
+                if (placemarks?.count)! > 0 {
+                    let placemark = placemarks?[0]
+                    if let coordinate = placemark?.location?.coordinate {
+                        self.currentLocation = coordinate
+                        self.loadLocation = false
+                        StationStore.shared.getNearestStations(latitude: self.currentLocation.latitude, longitude: self.currentLocation.longitude) {
+                            self.presentMainViewController()
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

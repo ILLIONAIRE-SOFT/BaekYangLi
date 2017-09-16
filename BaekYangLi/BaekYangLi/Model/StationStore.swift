@@ -15,9 +15,9 @@ class StationStore {
     private(set) var nearestStations: [Station] = []
     private(set) var groupedStations: [[Station]] = []
     
-    public func getNearestStations(completion: @escaping () -> ()) {
+    public func getNearestStations(latitude : Double, longitude : Double, completion: @escaping () -> ()) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        MetroAPI.getNearestStations { (stations) in
+        MetroAPI.getNearestStations(latitude: latitude, longitude: longitude) { (stations) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.nearestStations = stations
             self.nearestStations.sort(by: { (first, second) -> Bool in

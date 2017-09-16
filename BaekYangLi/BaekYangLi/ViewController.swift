@@ -21,9 +21,6 @@ class HomeViewController: BaseViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var voiceRecognizeButton: UIButton!
     
-    let locationManager = CLLocationManager()
-    var loadLocation : Bool = true
-    var currentLocation = CLLocationCoordinate2D()
     
     required init?(coder aDecoder: NSCoder) {
         let configuration = NSKRecognizerConfiguration(clientID: clientID)
@@ -39,10 +36,6 @@ class HomeViewController: BaseViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
         
         initViews()
     }
@@ -149,26 +142,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         present(ARViewController, animated: true, completion: nil)
     }
 
-}
-
-
-// MARK: - CLLocationManagerDelegate
-extension HomeViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if loadLocation {
-            CLGeocoder().reverseGeocodeLocation(manager.location!) { (placemarks, error) in
-                if (error != nil) {
-                    return
-                }
-                if (placemarks?.count)! > 0 {
-                    let placemark = placemarks?[0]
-                    if let coordinate = placemark?.location?.coordinate {
-                        self.currentLocation = coordinate
-                    }
-                }
-            }
-        }
-    }
 }
 
 
