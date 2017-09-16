@@ -36,7 +36,6 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "modalARKitVC" {
             let ARKitVC = segue.destination as! ARViewController
-            ARViewController.coordinate 
         }
     }
 }
@@ -73,7 +72,39 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.initCell(with: station)
         cell.backgroundColor = .red
         
+        let ARButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+        ARButton.center = cell.center
+        ARButton.tag = section
+        ARButton.backgroundColor = .black
+        ARButton.addTarget(self, action: #selector(sendARViewController(_:)), for: .touchUpInside)
+        cell.addSubview(ARButton)
+        
         return cell
+    }
+    
+    func sendARViewController(_ sender: UIButton)  {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let ARViewController = storyboard.instantiateViewController(withIdentifier: "ARViewController") as! ARViewController
+        
+        var coordinate = CLLocationCoordinate2D()
+        
+        switch sender.tag {
+        case 0:
+            coordinate.latitude = StationStore.shared.groupedStations[0][0].lat!
+            coordinate.longitude = StationStore.shared.groupedStations[0][0].lng!
+            ARViewController.coordinate = coordinate
+        case 1:
+            coordinate.latitude = StationStore.shared.groupedStations[1][0].lat!
+            coordinate.longitude = StationStore.shared.groupedStations[1][0].lng!
+            ARViewController.coordinate = coordinate
+        case 2:
+            coordinate.latitude = StationStore.shared.groupedStations[2][0].lat!
+            coordinate.longitude = StationStore.shared.groupedStations[2][0].lng!
+            ARViewController.coordinate = coordinate
+        default:
+            break
+        }
+        present(ARViewController, animated: true, completion: nil)
     }
 
 }

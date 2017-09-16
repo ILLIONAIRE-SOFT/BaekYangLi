@@ -13,7 +13,7 @@ import CoreLocation
 class ARViewController: UIViewController {
     
     var sceneLocationView = SceneLocationView()
-    let coordinate = CLLocationCoordinate2D()
+    var coordinate = CLLocationCoordinate2D()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,6 @@ class ARViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         sceneLocationView.frame = view.bounds
     }
 
