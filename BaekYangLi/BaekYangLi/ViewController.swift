@@ -20,8 +20,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+//        self.tableView.delegate = self
+//        self.tableView.dataSource = self
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -38,25 +38,25 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        ret
+//extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+//
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 3
 //    }
-
-}
+//    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 0
+//    }
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 1
+//    }
+//
+////    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+////        ret
+////    }
+//
+//}
 extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if loadLocation {
