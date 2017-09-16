@@ -74,6 +74,7 @@ function translateAlong(marker,path, reverse) {
     return function(i) {
       return function(t) {
         var p = path.getPointAtLength(reverse == 1 ? l - t * l : t * l);
+        if(t == 1) marker.remove();
         return "translate(" + (p.x-5) + "," + (p.y-5) + ")";//Move marker
       }
     }
