@@ -138,7 +138,7 @@ app.get('/getTrainsLive/:line', function(req, res) {
   parser.end();
   var line = req.params.line;
   for(var i = 1; i <= 8; i++) {
-    if(line != null && line != i)
+    if(line != null && line != "all" && line != i)
       continue;
     for(var j = 0; j < infos[i].length; j++) {
       infos[i][j] = getInfo(i,infos[i][j]);

@@ -40,6 +40,7 @@ function findPath(start, dest) {
 var trainList = new Object();
 
 function addTrain(trainNum, start, dest, duration, percentage) {
+    console.log(trainNum+" "+start+" "+dest+" "+duration+" "+percentage);
     var marker = svg.append("rect");
     trainList[trainList.length] = marker;
     var reverse =  start > dest ? 1 : 0;
@@ -102,7 +103,7 @@ setInterval(function(){
 setInterval(function(){
     var result = JSON.parse(httpGet("/getTrainsLive/all"));
     ss = result;
-
+    
     for(var k = 0; k < trainList.length; k++) {
         trainList[k].remove();
         delete(k);
@@ -113,9 +114,9 @@ setInterval(function(){
     for(var i = 1; i < 8; i++) {
         for(var j = 0; j < result[i].length; j++) {
             try {
-                addTrain(result[i][j].station_code,String(result[i][j].map_station_code),getNextStation(result[i][j].map_station_code,result[i][j].isUp),12000,result[i][j].percentage);
+                addTrain(result[i][j].station_code,String(result[i][j].map_station_code),getNextStation(result[i][j].map_station_code,result[i][j].isUp),4000,result[i][j].percentage);
             } catch (err) {
-
+    
             }
         }
     }
