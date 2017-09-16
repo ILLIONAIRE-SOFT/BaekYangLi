@@ -12,7 +12,7 @@ var htmlparser = require('htmlparser2');
 var request = require('sync-request');
 var allStations;
 var sql = "SELECT *, (SELECT COUNT(*) from station where name = A.name ) AS transfer from station AS A";
-
+ 
 connection.query(sql, function(err, result) {
   allStations = result;
 });
@@ -230,6 +230,12 @@ function getRoutes(start, dest) {
         stns[j] = "경의중앙선";
       } else if(stns[j].startsWith("106500")) {
         stns[j] = "공항철도";
+      } else if(stns[j].startsWith("1069")) {
+        stns[j] = "인천1호선";
+      } else if(stns[j].startsWith("1078")) {
+        stns[j] = "인천2호선";
+      } else if(stns[j].startsWith("1071")) {
+        stns[j] = "수인선";       
       } else if(stns[j].startsWith("107507")) {
         stns[j] = "분당선";
       }
