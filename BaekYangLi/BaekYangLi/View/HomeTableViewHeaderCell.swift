@@ -65,6 +65,9 @@ class HomeTableViewHeaderCell: UITableViewCell {
             make.left.equalTo(self)
             make.right.equalTo(self)
         }
+        
+        
+        
     }
     
 }

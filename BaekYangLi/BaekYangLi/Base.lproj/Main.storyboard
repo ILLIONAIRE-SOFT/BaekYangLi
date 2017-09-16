@@ -236,23 +236,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBo-eK-slF">
-                                <rect key="frame" x="313" y="20" width="46" height="30"/>
+                                <rect key="frame" x="299" y="40" width="60" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2tT-xw-oix"/>
-                                    <constraint firstAttribute="width" constant="46" id="91c-44-FUK"/>
+                                    <constraint firstAttribute="width" constant="60" id="BV9-7K-ndQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="DFz-6X-7xp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="닫기">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="WUe-FC-h9U" eventType="touchUpInside" id="KaR-tP-vRv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rBo-eK-slF" firstAttribute="top" secondItem="252-hi-KRV" secondAttribute="bottom" id="7MF-rN-fW1"/>
+                            <constraint firstItem="rBo-eK-slF" firstAttribute="top" secondItem="252-hi-KRV" secondAttribute="bottom" constant="20" id="7MF-rN-fW1"/>
                             <constraint firstItem="rBo-eK-slF" firstAttribute="trailing" secondItem="8au-77-GQ7" secondAttribute="trailingMargin" id="Uxh-Eg-uZl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dismiss" destination="rBo-eK-slF" id="I4u-pk-mHX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kp0-xe-NXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

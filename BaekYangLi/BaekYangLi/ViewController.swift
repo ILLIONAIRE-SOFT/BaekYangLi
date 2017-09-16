@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import NaverSpeech
+import SnapKit
 
 class HomeViewController: BaseViewController {
 
@@ -50,11 +51,6 @@ class HomeViewController: BaseViewController {
         super.viewWillAppear(animated)
         print(StationStore.shared.groupedStations)
     }
-<<<<<<< HEAD
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "modalARKitVC" {
-            let ARKitVC = segue.destination as! ARViewController
-=======
     
     private func initViews() {
         
@@ -79,7 +75,6 @@ class HomeViewController: BaseViewController {
             UIView.animate(withDuration: 0.5, animations: {
                 self.voiceRecognizeButton.backgroundColor = UIColor.red
             })
->>>>>>> 20c15aecd4459e801d22ea63554c87f91083799c
         }
     }
 }
@@ -114,13 +109,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = HomeTableViewHeaderCell(style: .default, reuseIdentifier: "HomeTableViewHeaderCell", station: station)
         
-        let ARButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-        ARButton.center = cell.center
+        let ARButton = UIButton()
         ARButton.tag = section
-        ARButton.backgroundColor = .black
+        ARButton.setImage(UIImage(named: "ic_directions_subway_white_48pt"), for: .normal)
         ARButton.addTarget(self, action: #selector(sendARViewController(_:)), for: .touchUpInside)
         cell.addSubview(ARButton)
         
+        ARButton.snp.makeConstraints { (make) in
+            make.width.equalTo(40)
+            make.height.equalTo(40)
+            make.right.equalTo(cell).offset(-20)
+            make.centerY.equalTo(cell.snp.centerY)
+        }
         return cell
     }
     

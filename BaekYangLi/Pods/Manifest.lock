@@ -3,17 +3,12 @@ PODS:
   - AlamofireObjectMapper (4.1.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
-<<<<<<< HEAD
   - ARCL (1.0.1)
   - NVActivityIndicatorView (3.7.0):
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
   - ObjectMapper (2.2.8)
-=======
-  - NVActivityIndicatorView (3.6.1)
-  - ObjectMapper (2.2.7)
   - SnapKit (3.2.0)
->>>>>>> 20c15aecd4459e801d22ea63554c87f91083799c
 
 DEPENDENCIES:
   - Alamofire
@@ -26,18 +21,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
-<<<<<<< HEAD
   ARCL: 193b108d6fd5277ce742be3af92ccf81bbdd2f3b
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
-
-PODFILE CHECKSUM: 5d0ba85e0a6b7f43c0dc2fe6a6a0ee294cd84d48
-=======
-  NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
-  ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: d2d8be6f022b7a8f94d27629c67f8fc06ced167f
->>>>>>> 20c15aecd4459e801d22ea63554c87f91083799c
+PODFILE CHECKSUM: 9900376421d30966dd8a4f9c06437a037482c03a
 
 COCOAPODS: 1.2.1
