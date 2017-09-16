@@ -1,5 +1,6 @@
 var x = document.getElementsByTagName("circle");
 var svg = d3.select("body").select("svg#map");
+var container = d3.select("svg#test");
 var lines = document.getElementsByClassName("line");
 var colors = new Object();
 for(var i = 0; i < lines.length; i++) {
@@ -40,8 +41,8 @@ function findPath(start, dest) {
 var trainList = new Object();
 
 function addTrain(trainNum, start, dest, duration, percentage) {
-    console.log(trainNum+" "+start+" "+dest+" "+duration+" "+percentage);
-    var marker = svg.append("rect");
+    //console.log(trainNum+" "+start+" "+dest+" "+duration+" "+percentage);
+    var marker = d3.select("svg#test").append("rect");
     trainList[trainList.length] = marker;
     var reverse =  start > dest ? 1 : 0;
     var path = findPath(start,dest);
@@ -110,7 +111,7 @@ setInterval(function(){
     }
     delete(trainList);
     trainList = new Object();
-
+    document.getElementById("test").innerHTML = "";
     for(var i = 1; i < 8; i++) {
         for(var j = 0; j < result[i].length; j++) {
             try {
