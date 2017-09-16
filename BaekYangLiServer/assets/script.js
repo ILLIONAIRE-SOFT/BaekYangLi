@@ -65,6 +65,7 @@ function pathStartPoint(path) {
 function transition(path,marker,duration,reverse) {
     marker.transition()
         .duration(duration)
+        .ease("linear")
         .attrTween("transform", translateAlong(marker,path.node(),reverse));
 }
   
