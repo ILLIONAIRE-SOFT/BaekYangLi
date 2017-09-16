@@ -73,5 +73,61 @@
             </objects>
             <point key="canvasLocation" x="-87.200000000000003" y="-71.514242878560722"/>
         </scene>
+        <!--Metro Course View Controller-->
+        <scene sceneID="T9l-sA-eDc">
+            <objects>
+                <viewController storyboardIdentifier="MetroCourseViewController" id="cI0-9X-CWv" customClass="MetroCourseViewController" customModule="BaekYangLi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SdM-Ma-Dn9"/>
+                        <viewControllerLayoutGuide type="bottom" id="FvH-oj-xLG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lhq-bj-a8N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도착지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpt-1Q-akr">
+                                <rect key="frame" x="125.5" y="84" width="125" height="71"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3m-uo-Msf">
+                                <rect key="frame" x="173" y="603" width="30" height="30"/>
+                                <state key="normal" title="완료"/>
+                                <connections>
+                                    <action selector="tappedComplete:" destination="cI0-9X-CWv" eventType="touchUpInside" id="FbJ-Cp-pt4"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapImage" translatesAutoresizingMaskIntoConstraints="NO" id="4PV-bi-PvL">
+                                <rect key="frame" x="0.0" y="203" width="375" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="grT-4c-Faw"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vpt-1Q-akr" firstAttribute="centerX" secondItem="Lhq-bj-a8N" secondAttribute="centerX" id="2ml-QV-jp0"/>
+                            <constraint firstItem="Vpt-1Q-akr" firstAttribute="top" secondItem="SdM-Ma-Dn9" secondAttribute="bottom" constant="64" id="A6s-Dr-RJa"/>
+                            <constraint firstItem="4PV-bi-PvL" firstAttribute="leading" secondItem="Lhq-bj-a8N" secondAttribute="leading" id="JaB-Fa-A7n"/>
+                            <constraint firstAttribute="trailing" secondItem="4PV-bi-PvL" secondAttribute="trailing" id="Jxx-GQ-dLD"/>
+                            <constraint firstItem="FvH-oj-xLG" firstAttribute="top" secondItem="K3m-uo-Msf" secondAttribute="bottom" constant="34" id="MRz-D2-6Eh"/>
+                            <constraint firstItem="4PV-bi-PvL" firstAttribute="top" secondItem="Vpt-1Q-akr" secondAttribute="bottom" constant="48" id="cBQ-Zl-Vq0"/>
+                            <constraint firstItem="K3m-uo-Msf" firstAttribute="centerX" secondItem="Lhq-bj-a8N" secondAttribute="centerX" id="lb0-aH-nvX"/>
+                            <constraint firstItem="4PV-bi-PvL" firstAttribute="centerY" secondItem="Lhq-bj-a8N" secondAttribute="centerY" id="uFX-gY-UwG"/>
+                            <constraint firstItem="4PV-bi-PvL" firstAttribute="centerX" secondItem="Lhq-bj-a8N" secondAttribute="centerX" id="wAV-oj-NFT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="destinationLabel" destination="Vpt-1Q-akr" id="x9f-gX-RGO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OM8-AW-yqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="-72"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="mapImage" width="526" height="503"/>
+    </resources>
 </document>

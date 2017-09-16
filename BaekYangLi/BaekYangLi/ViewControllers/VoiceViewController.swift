@@ -85,6 +85,11 @@ extension VoiceViewController: NSKRecognizerDelegate {
             MetroAPI.getDestinationInfo(completion: { 
                 self.stopLoading()
                 // present detail view with information
+                let tabTwoSB = UIStoryboard(name: "Tab2", bundle: nil)
+                let metroCourseVC = tabTwoSB.instantiateViewController(withIdentifier: "MetroCourseViewController") as! MetroCourseViewController
+                metroCourseVC.destinationName = result
+                self.present(metroCourseVC, animated: true, completion: nil)
+                
             })
         }
     }
