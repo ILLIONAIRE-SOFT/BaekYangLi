@@ -37,10 +37,7 @@ class VoiceViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        MetroAPI.getDestinationInfos(destination: "충무로") { (destinationInfos) in
-            print(destinationInfos[0].shtTransferMsg)
-        }
+
     }
     
     // MARK: Methods
@@ -88,14 +85,13 @@ extension VoiceViewController: NSKRecognizerDelegate {
             self.destinationLabel.text = result
             
             startLoading()
-            MetroAPI.getDestinationInfo(completion: { 
+            MetroAPI.getDestinationInfos(destination: "충무로", completion: { (destinationInfos) in
                 self.stopLoading()
-                // present detail view with information
+                
                 let tabTwoSB = UIStoryboard(name: "Tab2", bundle: nil)
                 let metroCourseVC = tabTwoSB.instantiateViewController(withIdentifier: "MetroCourseViewController") as! MetroCourseViewController
-                metroCourseVC.destinationName = result
+                metroCourseVC.destinationInfo = destinationInfos[0]
                 self.present(metroCourseVC, animated: true, completion: nil)
-                
             })
         }
     }
