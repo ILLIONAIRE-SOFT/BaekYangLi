@@ -7,18 +7,27 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Station {
+struct Station {
+    let lines : [Line]
+    
+    init(lines : [Line]) {
+        self.lines = lines
+    }
+}
+
+struct Line {
     let name : String
-    let station_id : Int
+    let stationID : Int
     let lat : Double
     let lng : Double
-    var up : [ArriveTime]
-    var down : [ArriveTime]
+    var up : [ArrivalTime]
+    var down : [ArrivalTime]
     
-    init(name: String, station_id : Int, lat: Double, lng : Double, up: [ArriveTime], down: [ArriveTime]) {
+    init(name: String, station_id : Int, lat: Double, lng : Double, up: [ArrivalTime], down: [ArrivalTime]) {
         self.name = name
-        self.station_id = station_id
+        self.stationID = station_id
         self.lat = lat
         self.lng = lng
         self.up = up
@@ -26,13 +35,13 @@ class Station {
     }
 }
 
-class ArriveTime {
-    var arriveTime : Date
+struct ArrivalTime {
+    var arrivalTime : Date
     var destination : String
     var leftTime : Int
     
-    init(arriveTime:Date, destination : String, leftTime : Int) {
-        self.arriveTime = arriveTime
+    init(arrivalTime:Date, destination : String, leftTime : Int) {
+        self.arrivalTime = arrivalTime
         self.destination = destination
         self.leftTime = leftTime
     }

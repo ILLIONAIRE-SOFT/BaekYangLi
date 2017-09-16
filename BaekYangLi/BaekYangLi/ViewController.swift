@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        MetroStore.fetchStations()
     }
 
     override func didReceiveMemoryWarning() {
