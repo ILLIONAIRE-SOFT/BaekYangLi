@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Device.Location;
 using System.Windows.Shapes;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace BaekYangLi
 {
@@ -22,7 +25,7 @@ namespace BaekYangLi
     public partial class MainWindow : Window
     {
         GeoCoordinateWatcher GW = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -44,12 +47,24 @@ namespace BaekYangLi
         {
             if (e.Position.Location != null)
             {
-                Console.WriteLine("Lat: {0}, Long: {1}",
+                var url = String.Format("http://172.16.0.35:8000/getNearStations/{0}/{1}",
                     e.Position.Location.Latitude,
                     e.Position.Location.Longitude);
+               
+                // Json String to Object 로 반환
+                JArray jo = JArray.Parse(GetResponseString(url));
+
                 GW.Stop();
             }
 
+        }
+
+        public string GetResponseString(string url)
+        {
+            WebClient client = new WebClient();
+            client.Encoding = Encoding.UTF8;
+            // 웹 URL을 통해 String 데이터로 반환
+            return client.DownloadString(url);
         }
     }
 }
