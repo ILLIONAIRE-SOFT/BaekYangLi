@@ -17,7 +17,6 @@
 		492B46FB1F6C3EBA00C68D0E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 492B46F91F6C3EBA00C68D0E /* Info.plist */; };
 		492B46FC1F6C3EBA00C68D0E /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B46FA1F6C3EBA00C68D0E /* Languages.swift */; };
 		8B5B32F29594FEC5A4A3610F /* Pods_BaekYangLiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170AC8BA0A00EA9AC96EDC2 /* Pods_BaekYangLiUITests.framework */; };
-		D467DEEC1F6CC15500FBFEEA /* PagingScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467DEEB1F6CC15500FBFEEA /* PagingScrollViewController.swift */; };
 		DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25A1F6C15F50096F550 /* AppDelegate.swift */; };
 		DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25C1F6C15F50096F550 /* ViewController.swift */; };
 		DA42D2601F6C15F50096F550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D25E1F6C15F50096F550 /* Main.storyboard */; };
@@ -78,7 +77,6 @@
 		7A997902DE2573E38D89248C /* Pods-BaekYangLiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaekYangLiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaekYangLiUITests/Pods-BaekYangLiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BD976DC4CA1BD385A3F3CAAB /* Pods-BaekYangLiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaekYangLiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaekYangLiTests/Pods-BaekYangLiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C92C995402072592E9CBE6DE /* Pods_BaekYangLiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaekYangLiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D467DEEB1F6CC15500FBFEEA /* PagingScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PagingScrollViewController.swift; path = ViewControllers/PagingScrollViewController.swift; sourceTree = "<group>"; };
 		D5F7E741DD80DAC850F4881E /* Pods-BaekYangLiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaekYangLiUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaekYangLiUITests/Pods-BaekYangLiUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA42D2571F6C15F50096F550 /* BaekYangLi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaekYangLi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA42D25A1F6C15F50096F550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 				491618161F6CB86F0008851F /* Base */,
 				492B46F01F6C37F100C68D0E /* VoiceViewController.swift */,
 				DA42D25C1F6C15F50096F550 /* ViewController.swift */,
-				D467DEEB1F6CC15500FBFEEA /* PagingScrollViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -584,7 +581,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D467DEEC1F6CC15500FBFEEA /* PagingScrollViewController.swift in Sources */,
 				DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */,
 				4916181B1F6CBFC40008851F /* MetroCourseViewController.swift in Sources */,
 				492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */,

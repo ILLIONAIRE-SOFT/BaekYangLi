@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, PagingScrollViewController {
+class ViewController: UIViewController {
 
     let locationManager = CLLocationManager()
     var loadLocation : Bool = true
