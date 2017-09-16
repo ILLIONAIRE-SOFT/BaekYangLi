@@ -152,6 +152,8 @@ function showToolTip(xPosition, yPosition, text) {
 function alertInfo(uid) {
     var result = JSON.parse(httpGet("/getArrivalTimeLiveMapCode/"+uid));
     var x = "";
+    if(result.length > 0)
+        x += result[0].statnNm+"역\n";
     for(var i = 0 ; i < result.length; i++)
      x += result[i].trainLineNm+" "+result[i].arvlMsg2+"\n";
     alert(x);
