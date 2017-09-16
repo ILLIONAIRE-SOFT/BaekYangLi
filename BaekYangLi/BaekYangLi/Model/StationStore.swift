@@ -6,7 +6,7 @@
 //  Copyright © 2017 BaekYangLi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class StationStore {
     
@@ -15,10 +15,17 @@ class StationStore {
     private(set) var nearestStations: [Station] = []
     
     public func getNearestStations(completion: @escaping () -> ()) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         MetroAPI.getNearestStations { (stations) in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.nearestStations = stations
-            print(self.nearestStations)
-            print(self.nearestStations[0].up?[0].destinationName)
+            self.nearestStations.sort(by: { (first, second) -> Bool in
+                return first.distance! < second.distance!
+            })
+            
+            for station in self.nearestStations {
+                print(station.name!)
+            }
         }
     }
 }
