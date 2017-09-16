@@ -8,6 +8,7 @@
 
 import UIKit
 import NaverSpeech
+import NVActivityIndicatorView
 
 class VoiceViewController: UIViewController {
     
@@ -18,9 +19,9 @@ class VoiceViewController: UIViewController {
     
     @IBOutlet var voiceRecognitionButton: UIButton!
     @IBOutlet var destinationLabel: UILabel!
-    @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var activityIndicator: NVActivityIndicatorView!
     
-    required init?(coder aDecoder: NSCoder) { // NSKRecognizer를 초기화 하는데 필요한 NSKRecognizerConfiguration을 생성
+    required init?(coder aDecoder: NSCoder) {
         let configuration = NSKRecognizerConfiguration(clientID: clientID)
         configuration?.canQuestionDetected = true
         self.speechRecognizer = NSKRecognizer(configuration: configuration)
@@ -36,23 +37,19 @@ class VoiceViewController: UIViewController {
         
         initViews()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: Methods
     private func initViews() {
         
         self.voiceRecognitionButton.layer.cornerRadius = 40
+        self.activityIndicator.type = .lineScalePulseOut
+        self.activityIndicator.color = .blue
     }
     
     func tappedStartRecognize() {
         if self.speechRecognizer.isRunning {
             self.speechRecognizer.stop()
         } else {
-            self.statusLabel.text = "녹음 준비중"
             self.speechRecognizer.start(with: self.languages.selectedLanguage)
             UIView.animate(withDuration: 0.5, animations: {
                 self.voiceRecognitionButton.backgroundColor = UIColor.blue
@@ -63,20 +60,20 @@ class VoiceViewController: UIViewController {
     func endRecognize() {
         if self.speechRecognizer.isRunning {
             self.speechRecognizer.stop()
-            self.statusLabel.text = "녹음 중지"
+            self.activityIndicator.stopAnimating()
             UIView.animate(withDuration: 0.5, animations: {
                 self.voiceRecognitionButton.backgroundColor = UIColor.red
             })
         }
     }
-    
 
 }
 
+// MARK: - NSKRecognizerDelegate
 extension VoiceViewController: NSKRecognizerDelegate {
     
     public func recognizerDidEnterReady(_ aRecognizer: NSKRecognizer!) {
-        self.statusLabel.text = "녹음 중"
+        self.activityIndicator.startAnimating()
     }
     
     public func recognizer(_ aRecognizer: NSKRecognizer!, didReceive aResult: NSKRecognizedResult!) {
