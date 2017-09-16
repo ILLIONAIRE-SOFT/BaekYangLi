@@ -20,8 +20,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.tableView.delegate = self
-//        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -31,10 +31,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        StationStore.shared.getNearestStations { 
-            
-        }
+        print(StationStore.shared.groupedStations)
     }
 }
 
