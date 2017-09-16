@@ -24,5 +24,11 @@ namespace BaekYangLi
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.DefaultStationName = BaseName.Text;
+            Properties.Settings.Default.Save();
+        }
     }
 }

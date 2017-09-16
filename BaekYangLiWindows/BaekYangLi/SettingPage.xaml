@@ -9,6 +9,10 @@
       Title="SettingPage" Background="#FFF1F1F1">
 
     <Grid>
-        
+        <Label Content="기본역 설정
+               " HorizontalAlignment="Left" Margin="43,32,0,0" VerticalAlignment="Top" FontSize="20" Width="122"/>
+        <TextBox x:Name ="BaseName" HorizontalAlignment="Left" Height="36" Margin="194,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <Button Content="저장" HorizontalAlignment="Left" Margin="364,32,0,0" VerticalAlignment="Top" Width="75" Height="34" Click="Button_Click"/>
+
     </Grid>
 </Page>

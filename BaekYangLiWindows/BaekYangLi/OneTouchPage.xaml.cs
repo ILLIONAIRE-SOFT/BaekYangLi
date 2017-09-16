@@ -40,6 +40,11 @@ namespace BaekYangLi
 
         public void GetGPS()
         {
+            if(Properties.Settings.Default.DefaultStationName != "")
+            {
+                UseDefaultStation();
+                return;
+            }
             bool started = GW.TryStart(true, TimeSpan.FromMilliseconds(2000));
             if (!started)
             {
@@ -47,6 +52,19 @@ namespace BaekYangLi
             }
 
             GW.PositionChanged += PositionChanged;
+        }
+
+        private void UseDefaultStation()
+        {
+            NearStationNames.Clear();
+            var name = Properties.Settings.Default.DefaultStationName;
+            LineNum.Visibility = Visibility.Hidden;
+            LineFill.Visibility = Visibility.Hidden;
+            NearStationNames.Add(new StationInfo
+            {
+                name = name, line = "-1", code = "-1"
+            });
+            SetStationImage(0);
         }
 
         private void PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)

@@ -28,7 +28,7 @@ namespace BaekYangLi
         public MainWindow()
         {
             InitializeComponent();
-           
+            InsideFrame.Navigate(new OneTouchPage());
         }
 
 
@@ -39,7 +39,7 @@ namespace BaekYangLi
             else if (sender == MapBtn)
                 InsideFrame.Navigate(new MapPage());
             else
-                InsideFrame.Navigate(new Page());
+                InsideFrame.Navigate(new SettingPage());
         }
     }
 }

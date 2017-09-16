@@ -26,7 +26,7 @@
                     <Image  Source="img/bar.png" Stretch="Fill" Margin="0,3"/>
                     <Label x:Name="StartStationName" Content="찾는중" VerticalAlignment="Center" FontWeight="Bold" Foreground="#FFE8E8E8" FontSize="50" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
                 </Grid>
-                <Ellipse Fill="#FF17ADE1" Width="79" Height="80" />
+                <Ellipse x:Name="LineFill" Fill="#FF17ADE1" Width="79" Height="80" />
                 <Label x:Name="LineNum" Content="?" VerticalAlignment="Center" FontWeight="Bold" Foreground="#FFE8E8E8" FontSize="50" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
             </Grid>
         </Grid>
