@@ -115,7 +115,7 @@ setInterval(function(){
     for(var i = 1; i < 8; i++) {
         for(var j = 0; j < result[i].length; j++) {
             try {
-                addTrain(result[i][j].station_code,String(result[i][j].map_station_code),getNextStation(result[i][j].map_station_code,result[i][j].isUp),4000,result[i][j].percentage);
+                addTrain(result[i][j].station_code,String(result[i][j].map_station_code),getNextStation(result[i][j].map_station_code,result[i][j].isUp),8000,result[i][j].percentage);
             } catch (err) {
     
             }
