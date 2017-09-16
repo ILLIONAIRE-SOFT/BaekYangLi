@@ -26,7 +26,7 @@
 		DA42D2731F6C15F50096F550 /* BaekYangLiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D2721F6C15F50096F550 /* BaekYangLiTests.swift */; };
 		DA42D27E1F6C15F50096F550 /* BaekYangLiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D27D1F6C15F50096F550 /* BaekYangLiUITests.swift */; };
 		DA42D28C1F6C2C2B0096F550 /* Tab2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */; };
-		DA42D28F1F6C305D0096F550 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D28E1F6C305D0096F550 /* LocationService.swift */; };
+		DA4634A01F6D4A4900ABC39E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46349F1F6D4A4900ABC39E /* HomeTableViewCell.swift */; };
 		DAB87E021F6CF50C00EFF83B /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB87E011F6CF50C00EFF83B /* Station.swift */; };
 		EB28AD1940FA3385714B3677 /* Pods_BaekYangLi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C83A8E431E89359702BBC3 /* Pods_BaekYangLi.framework */; };
 /* End PBXBuildFile section */
@@ -95,7 +95,7 @@
 		DA42D27D1F6C15F50096F550 /* BaekYangLiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaekYangLiUITests.swift; sourceTree = "<group>"; };
 		DA42D27F1F6C15F50096F550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tab2.storyboard; sourceTree = "<group>"; };
-		DA42D28E1F6C305D0096F550 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		DA46349F1F6D4A4900ABC39E /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewCell.swift; path = View/HomeTableViewCell.swift; sourceTree = "<group>"; };
 		DAB87E011F6CF50C00EFF83B /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +185,7 @@
 		492B46EF1F6C37AE00C68D0E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA42D25A1F6C15F50096F550 /* AppDelegate.swift */,
 				DA42D2641F6C15F50096F550 /* Assets.xcassets */,
 				DA42D2691F6C15F50096F550 /* Info.plist */,
 			);
@@ -249,12 +250,11 @@
 		DA42D2591F6C15F50096F550 /* BaekYangLi */ = {
 			isa = PBXGroup;
 			children = (
-				492B46EF1F6C37AE00C68D0E /* Supporting Files */,
-				492B46EE1F6C37A700C68D0E /* Utilities */,
 				492B46ED1F6C37A300C68D0E /* Model */,
 				492B46EC1F6C379600C68D0E /* ViewControllers */,
-				DA42D25A1F6C15F50096F550 /* AppDelegate.swift */,
-				DA42D28E1F6C305D0096F550 /* LocationService.swift */,
+				DA46349E1F6D4A4400ABC39E /* View */,
+				492B46EF1F6C37AE00C68D0E /* Supporting Files */,
+				492B46EE1F6C37A700C68D0E /* Utilities */,
 				DA42D28D1F6C2F550096F550 /* StoryBoard */,
 			);
 			path = BaekYangLi;
@@ -286,6 +286,14 @@
 				DA42D2661F6C15F50096F550 /* LaunchScreen.storyboard */,
 			);
 			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		DA46349E1F6D4A4400ABC39E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA46349F1F6D4A4900ABC39E /* HomeTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -590,10 +598,10 @@
 				DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */,
 				4916181B1F6CBFC40008851F /* MetroCourseViewController.swift in Sources */,
 				492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */,
-				DA42D28F1F6C305D0096F550 /* LocationService.swift in Sources */,
 				DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */,
 				491618151F6C4CD80008851F /* MetroAPI.swift in Sources */,
 				491618181F6CB87E0008851F /* BaseViewController.swift in Sources */,
+				DA4634A01F6D4A4900ABC39E /* HomeTableViewCell.swift in Sources */,
 				492B46FC1F6C3EBA00C68D0E /* Languages.swift in Sources */,
 				DAB87E021F6CF50C00EFF83B /* Station.swift in Sources */,
 				49EC75E71F6D34BE0039D7E5 /* StationStore.swift in Sources */,
