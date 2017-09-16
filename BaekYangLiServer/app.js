@@ -11,7 +11,7 @@ connection.connect();
 var request = require('sync-request');
 
 app.get('/', function (req, res) {
-  res.send('Hello /');
+  res.sendFile(process.cwd()+'/view/apis.html');
 });
 
 app.get('/subwayLiveView', function(req, res) {
