@@ -18,6 +18,10 @@ app.get('/world.html', function (req, res) {
   res.send('Hello World');
 });
 
+app.get('/getArrivalTimeLive/:station_name', function(req, res) {
+  res.send(getArrivalTimeLive(req.params.station_name));
+});
+
 app.get('/getArrivalTimeOfStation/:station_code', function (req, res) {
   res.send(getArrivalTimeOfStation(req.params.station_code));
 });
@@ -79,6 +83,19 @@ function getArrivalTimeOfStation(stationCode) {
   console.log('http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/2/'+getDayType());
   var data2 = JSON.parse(res2.getBody('utf8'));
   return data.SearchArrivalTimeOfLine2SubwayByFRCodeService.row.concat(data2.SearchArrivalTimeOfLine2SubwayByFRCodeService.row);
+}
+
+function getArrivalTimeLive(stationName) {
+  var res;
+  for(var i = 0; i < 5; i++) {
+      res = request('GET', 'http://swopenapi.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/'+urlencode(stationName)).getBody('utf8');
+      if(res.includes('apache'))
+        continue;
+      else
+        break;
+  }
+  var data = JSON.parse(res);
+  return data.realtimeArrivalList;
 }
 
 function getRoutes(start, dest) {
