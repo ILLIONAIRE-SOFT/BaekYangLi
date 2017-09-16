@@ -82,7 +82,6 @@ extension VoiceViewController: NSKRecognizerDelegate {
     public func recognizer(_ aRecognizer: NSKRecognizer!, didReceive aResult: NSKRecognizedResult!) {
 
         if let result = aResult.results.first as? String {
-            print(result)
             var removeWithoutWhiteSpace = result.trimmingCharacters(in: CharacterSet.whitespaces)
             removeWithoutWhiteSpace = removeWithoutWhiteSpace.replacingOccurrences(of: " ", with: "")
             
