@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3BDB40B3DDCB9EABB4068FAF /* Pods_BaekYangLiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92C995402072592E9CBE6DE /* Pods_BaekYangLiTests.framework */; };
+		491618151F6C4CD80008851F /* MetroAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491618141F6C4CD80008851F /* MetroAPI.swift */; };
 		492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B46F01F6C37F100C68D0E /* VoiceViewController.swift */; };
 		492B46F41F6C3B8C00C68D0E /* NaverSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */; };
 		492B46F51F6C3B8C00C68D0E /* NaverSpeech.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -61,6 +62,7 @@
 		2170AC8BA0A00EA9AC96EDC2 /* Pods_BaekYangLiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaekYangLiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2991645448E6985E472B6F6D /* Pods-BaekYangLi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaekYangLi.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaekYangLi/Pods-BaekYangLi.release.xcconfig"; sourceTree = "<group>"; };
 		45C83A8E431E89359702BBC3 /* Pods_BaekYangLi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaekYangLi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		491618141F6C4CD80008851F /* MetroAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetroAPI.swift; path = Utilities/MetroAPI.swift; sourceTree = "<group>"; };
 		492B46F01F6C37F100C68D0E /* VoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoiceViewController.swift; path = ViewControllers/VoiceViewController.swift; sourceTree = "<group>"; };
 		492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NaverSpeech.framework; sourceTree = "<group>"; };
 		492B46F81F6C3EBA00C68D0E /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		492B46EE1F6C37A700C68D0E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				491618141F6C4CD80008851F /* MetroAPI.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */,
 				DA42D28F1F6C305D0096F550 /* LocationService.swift in Sources */,
 				DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */,
+				491618151F6C4CD80008851F /* MetroAPI.swift in Sources */,
 				492B46FC1F6C3EBA00C68D0E /* Languages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
