@@ -28,6 +28,10 @@ class HomeViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        
+        
         
     }
     
@@ -43,9 +47,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 3
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 80
-    }
+  //  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+   //     return 80
+   // }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return StationStore.shared.groupedStations[section].count
@@ -57,7 +61,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
         cell.initCell(with: station)
-        cell.layer.cornerRadius = 10
         cell.backgroundColor = UIColor.lightGray
         
         return cell
