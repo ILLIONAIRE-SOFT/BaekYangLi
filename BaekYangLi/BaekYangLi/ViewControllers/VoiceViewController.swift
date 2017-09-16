@@ -69,6 +69,7 @@ class VoiceViewController: UIViewController {
 
 }
 
+// MARK: - NSKRecognizerDelegate
 extension VoiceViewController: NSKRecognizerDelegate {
     
     public func recognizerDidEnterReady(_ aRecognizer: NSKRecognizer!) {
