@@ -8,6 +8,11 @@ target 'BaekYangLi' do
   # Pods for BaekYangLi
 
   pod 'NVActivityIndicatorView'
+  pod 'Alamofire'
+  pod 'ObjectMapper'
+  pod 'AlamofireObjectMapper'
+
+
 
   target 'BaekYangLiTests' do
     inherit! :search_paths
