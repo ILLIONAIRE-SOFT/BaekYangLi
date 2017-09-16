@@ -1,5 +1,6 @@
 var x = document.getElementsByTagName("circle");
 var svg = d3.select("body").select("svg#map");
+var bubble = d3.select("body").select("svg#bubble");
 var container = d3.select("svg#test");
 var lines = document.getElementsByClassName("line");
 var colors = new Object();
@@ -101,6 +102,7 @@ setInterval(function(){
 },1000);
 */
 
+var line = 1;
 setInterval(function(){
     var result = JSON.parse(httpGet("/getTrainsLive/all"));
     ss = result;
@@ -131,3 +133,20 @@ function getNextStation(start, inout) {
         x = "0"+x;
     return x;
 }
+
+function showToolTip(xPosition, yPosition, text) {
+    var tooltipG = svg.append("g")
+    .attr("transform", "translate(" + xPosition + "," + yPosition + ")");
+  
+  tooltipG.append("rect")
+    .attr("width","80")
+    .attr("height","40")
+    .style("fill", "grey");
+  
+  tooltipG.append("text")
+    .style("font-size", "10px")
+    .attr("dy", +10)
+    .text((text));
+}
+
+showToolTip(100,100,"test");

@@ -25,6 +25,10 @@ app.get('/subwayLiveView', function(req, res) {
   res.sendFile(process.cwd()+'/view/liveView.html');
 });
 
+app.get('/subwayLiveTest', function(req, res) {
+  res.sendFile(process.cwd()+'/view/liveTest.html');
+});
+
 app.get('/assets/:file', function(req, res) {
   res.sendFile(process.cwd()+'/assets/'+req.params.file);
 });
@@ -66,7 +70,7 @@ app.get('/getNearStations/:lat/:lng', function(req, res) {
     for(var i = 0; i < result.length; i++) {
       result[i].up =  getArrivalTimeOfStation(result[i].station_code,1);
       result[i].down =  getArrivalTimeOfStation(result[i].station_code,2);
-      result[i].meter = calcCrow(req.params.lat,req.params.lng,result[i].lat,result[i].lng)*1000;
+      result[i].meter = calcCrow(req.params.lat,req.params.lng,result[i].lat,result[i].lng);
     }
     res.send(result);
   });
@@ -156,8 +160,12 @@ server.listen(8000, function() {
 });
 
 function getArrivalTimeOfStation(stationCode, up) {
-  var res = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/3/'+stationCode+'/'+up+'/'+getDayType());
-  var data = JSON.parse(res.getBody('utf8'));
+  try {
+    var res = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/3/'+stationCode+'/'+up+'/'+getDayType());
+    var data = JSON.parse(res.getBody('utf8'));
+  } catch(err) {
+
+  }
   return data.SearchArrivalTimeOfLine2SubwayByFRCodeService.row;
 }
 
