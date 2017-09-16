@@ -24,10 +24,11 @@ namespace BaekYangLi
     public partial class OneTouchPage : Page
     {
         GeoCoordinateWatcher GW = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
-
+        List<string> NearStationNames = new List<string>();
         public OneTouchPage()
         {
             InitializeComponent();
+            GetGPS();
         }
 
         public void GetGPS()
@@ -50,10 +51,17 @@ namespace BaekYangLi
                     e.Position.Location.Longitude);
 
                 // Json String to Object 로 반환
-                JArray jo = JArray.Parse(GetResponseString(url));
+                JArray ja = JArray.Parse(GetResponseString(url));
 
+                foreach (JObject item in ja)
+                {
+                    var name = (string)item["name"];
+                    NearStationNames.Add(name);
+                }
+                
                 GW.Stop();
 
+                StartStationName.Content = NearStationNames[0];
                 
 
             }
