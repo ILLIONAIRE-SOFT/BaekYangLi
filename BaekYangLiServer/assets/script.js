@@ -149,4 +149,10 @@ function showToolTip(xPosition, yPosition, text) {
     .text((text));
 }
 
-showToolTip(100,100,"test");
+function alertInfo(uid) {
+    var result = JSON.parse(httpGet("/getArrivalTimeLiveMapCode/"+uid));
+    var x = "";
+    for(var i = 0 ; i < result.length; i++)
+     x += result[i].trainLineNm+" "+result[i].arvlMsg2+"\n";
+    alert(x);
+}
