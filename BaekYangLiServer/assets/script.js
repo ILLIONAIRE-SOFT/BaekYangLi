@@ -1,17 +1,26 @@
 var x = document.getElementsByTagName("circle");
 var svg = d3.select("body").select("svg#map");
 
+setTimeout(function() {
+    x = document.getElementsByTagName("circle");
+    svg = d3.select("body").select("svg#map");
+}, 500);
+
 function findStationCircle(num) {
     return x["M"+num];
 }
 
 function findPath(start, dest) {
-    console.log(start+" "+dest);
     return d3.selectAll(".P"+start+dest);
 }
 
-function addTrain(start, dest, duration, percentage) {
+var trainList = new Object();
+
+function addTrain(trainNum, start, dest, duration, percentage) {
     var marker = svg.append("rect");
+    if(trainList[trainNum] != null)
+        trainList[trainNum].remove();
+    trainList[trainNum] = marker;
     var reverse =  start > dest ? 1 : 0;
     var path = findPath(start,dest);
     var startPoint = pathStartPoint(path);
@@ -44,3 +53,8 @@ function translateAlong(path, reverse) {
       }
     }
 }
+
+setInterval(function {
+    //code for the drums playing goes here
+},8000);
+    
