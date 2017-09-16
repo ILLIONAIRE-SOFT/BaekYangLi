@@ -34,15 +34,28 @@ class HomeTableViewCell: UITableViewCell {
     
     func initCell(with station : Station) {
         self.lineNum.text = station.line
-        self.upFirstLeftTime.text = station.up?[0].arriveTime
+        
+        self.upFirstLeftTime.text = getTime(station.up?[0].arriveTime)
         self.upFirstDestination.text = station.up?[0].destinationName
-        self.upSecondLeftTime.text =  station.up?[1].arriveTime
+        
+        self.upSecondLeftTime.text = getTime(station.up?[1].arriveTime)
         self.upSecondDestination.text = station.up?[1].destinationName
         
-        self.downFirstLeftTime.text = station.down?[0].arriveTime
+        self.downFirstLeftTime.text = getTime(station.down?[0].arriveTime)
         self.downFirstDestination.text =  station.down?[0].destinationName
-        self.downSecondLeftTime.text =  station.down?[1].arriveTime
+        
+        self.downSecondLeftTime.text = getTime(station.down?[1].arriveTime)
         self.downSecondDestination.text =  station.down?[1].destinationName
+    }
+    
+    func getTime(_ time: String?) -> String {
+        guard let time = time else {
+            return ""
+        }
+        
+        let components = time.components(separatedBy: ":")
+        let result = "\(components[0]):\(components[1])"
+        return result
     }
 
 }

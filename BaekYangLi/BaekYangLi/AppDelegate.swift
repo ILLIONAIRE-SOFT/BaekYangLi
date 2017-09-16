@@ -19,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
         // Tab2 테스트할때 아래 initViewController를 Tab2로
+<<<<<<< HEAD
         
+=======
+>>>>>>> 20c15aecd4459e801d22ea63554c87f91083799c
         
         let initViewController = "Main"
 
