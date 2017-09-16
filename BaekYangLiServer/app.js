@@ -202,7 +202,41 @@ function getRoutes(start, dest) {
   var res = request('GET', 'http://swopenapi.seoul.go.kr/api/subway/sample/json/shortestRoute/0/5/'+urlencode(start)+'/'+urlencode(dest));
   console.log(res.getBody('utf8'));
   var data = JSON.parse(res.getBody('utf8'));
-  return data.shortestRouteList;
+  var list = data.shortestRouteList;
+  for(var i = 0 ; i < list.length; i++) {
+    var stns = list[i].shtStatnId.split(",");
+    for(var j = 0; j < stns.length; j++) {
+      if(stns[j].startsWith("106708")) {
+        stns[j] = "경춘선";
+      } else if(stns[j].startsWith("1001")) {
+        stns[j] = "1호선";
+      } else if(stns[j].startsWith("1002")) {
+        stns[j] = "2호선";
+      } else if(stns[j].startsWith("1003")) {
+        stns[j] = "3호선";
+      } else if(stns[j].startsWith("1004")) {
+        stns[j] = "4호선";
+      } else if(stns[j].startsWith("1005")) {
+        stns[j] = "5호선";
+      } else if(stns[j].startsWith("1006")) {
+        stns[j] = "6호선";
+      } else if(stns[j].startsWith("1007")) {
+        stns[j] = "7호선";
+      } else if(stns[j].startsWith("1008")) {
+        stns[j] = "8호선";
+      } else if(stns[j].startsWith("1009")) {
+        stns[j] = "9호선";
+      } else if(stns[j].startsWith("1063")) {
+        stns[j] = "경의중앙선";
+      } else if(stns[j].startsWith("106500")) {
+        stns[j] = "공항철도";
+      } else if(stns[j].startsWith("107507")) {
+        stns[j] = "분당선";
+      }
+    }
+    list[i].shtStatnId = stns;
+  }
+  return list;
 }
 
 function getDayType() {
