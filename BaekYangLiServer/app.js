@@ -73,10 +73,11 @@ server.listen(8000, function() {
 });
 
 function getArrivalTimeOfStation(stationCode) {
-  var res = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/'+getDayType()+'/1/');
+  var res = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/1/'+getDayType());
   var data = JSON.parse(res.getBody('utf8'));
-  var res2 = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/'+getDayType()+'/2/');
-  var data2 = JSON.parse(res.getBody('utf8'));
+  var res2 = request('GET', 'http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/2/'+getDayType());
+  console.log('http://openapi.seoul.go.kr:8088/'+config.key+'/json/SearchArrivalTimeOfLine2SubwayByFRCodeService/1/5/'+stationCode+'/2/'+getDayType());
+  var data2 = JSON.parse(res2.getBody('utf8'));
   return data.SearchArrivalTimeOfLine2SubwayByFRCodeService.row.concat(data2.SearchArrivalTimeOfLine2SubwayByFRCodeService.row);
 }
 
@@ -88,6 +89,6 @@ function getRoutes(start, dest) {
 }
 
 function getDayType() {
-  return max(new Date().getDay()-5,1);
+  return Math.max(new Date().getDay()-4,1);
 }
 
