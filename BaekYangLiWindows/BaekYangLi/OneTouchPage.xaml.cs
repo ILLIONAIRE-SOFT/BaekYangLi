@@ -23,8 +23,15 @@ namespace BaekYangLi
     /// </summary>
     public partial class OneTouchPage : Page
     {
+        struct StationInfo
+        {
+            public string name;
+            public string line;
+            public string code;
+        }
         GeoCoordinateWatcher GW = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
-        List<string> NearStationNames = new List<string>();
+        List<StationInfo> NearStationNames = new List<StationInfo>();
+        int Idx = 0;
         public OneTouchPage()
         {
             InitializeComponent();
@@ -56,12 +63,26 @@ namespace BaekYangLi
                 foreach (JObject item in ja)
                 {
                     var name = (string)item["name"];
-                    NearStationNames.Add(name);
+                    var line = (string)item["line"];
+                    var code = (string)item["station_code"];
+                    StationInfo info = new StationInfo
+                    {
+                        line = line,
+                        name = name,
+                        code = code
+                    };
+
+
+                    NearStationNames.Add(info);
                 }
                 
                 GW.Stop();
 
-                StartStationName.Content = NearStationNames[0];
+                if (NearStationNames.Count > 0)
+                {
+                    Idx = 0;
+                    SetStationImage(Idx);
+                }
                 
 
             }
@@ -70,10 +91,58 @@ namespace BaekYangLi
 
         public string GetResponseString(string url)
         {
-            WebClient client = new WebClient();
-            client.Encoding = Encoding.UTF8;
+            WebClient client = new WebClient
+            {
+                Encoding = Encoding.UTF8
+            };
             // 웹 URL을 통해 String 데이터로 반환
             return client.DownloadString(url);
+        }
+
+        private void NextBtnClick(object sender, RoutedEventArgs e)
+        {
+            if (NearStationNames.Count < 1)
+                return;
+            Idx++;
+            if (NearStationNames.Count <= Idx)
+            {
+                Idx = 0;             
+            }
+
+            SetStationImage(Idx);
+        }
+
+        private void PrevBtnClick(object sender, RoutedEventArgs e)
+        {
+            if (NearStationNames.Count < 1)
+                return;
+            Idx--;
+            if (0 > Idx)
+            {
+                Idx = NearStationNames.Count-1;
+            }
+            SetStationImage(Idx);
+
+        }
+
+        private void SetStationImage(int idx)
+        {
+            LineNum.Content = NearStationNames[Idx].line;
+            StartStationName.Content = NearStationNames[Idx].name;
+            PrintStationInfo(idx);
+        }
+
+        private void PrintStationInfo(int idx)
+        {
+            var url = String.Format("http://172.16.0.35:8000/getArrivalTimeLive/{0}",
+                    NearStationNames[idx].name);
+            var arrival = GetResponseString(url);
+
+            url = String.Format("http://172.16.0.35:8000/getArrivalTimeOfStation/{0}",
+                    NearStationNames[idx].code);
+
+            var timetable = GetResponseString(url);
+
         }
     }
 }

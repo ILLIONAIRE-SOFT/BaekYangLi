@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BaekYangLi"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="600" Background="{x:Null}">
-    <Grid Background="#FFDDDDDD">
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="100*"/>
@@ -19,17 +19,17 @@
                 <StackPanel.Background>
                     <ImageBrush/>
                 </StackPanel.Background>
-                <Button x:Name="OneTouchBtn"  Height="50" Click="BtnClick">
+                <Button x:Name="OneTouchBtn"  Height="50" Click="BtnClick" BorderBrush="{x:Null}">
                     <Button.Background>
                         <ImageBrush ImageSource="img/map.png" />
                     </Button.Background>
                 </Button>
-                <Button x:Name="MapBtn"    Height="50" Click="BtnClick">
+                <Button x:Name="MapBtn"    Height="50" Click="BtnClick" BorderBrush="{x:Null}">
                     <Button.Background>
                         <ImageBrush ImageSource="img/map.png"/>
                     </Button.Background>
                 </Button>
-                <Button  x:Name="SettingBtn"   Height="50" Click="BtnClick">
+                <Button  x:Name="SettingBtn"   Height="50" Click="BtnClick" BorderBrush="{x:Null}">
                     <Button.Background>
                         <ImageBrush ImageSource="img/setting.png"/>
                     </Button.Background>
