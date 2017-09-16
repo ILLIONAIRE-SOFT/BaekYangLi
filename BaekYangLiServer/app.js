@@ -226,7 +226,7 @@ function getRoutes(start, dest) {
         stns[j] = "8호선";
       } else if(stns[j].startsWith("1009")) {
         stns[j] = "9호선";
-      } else if(stns[j].startsWith("1063")) {
+      } else if(stns[j].startsWith("1063")||stns[j].startsWith("106107")) {
         stns[j] = "경의중앙선";
       } else if(stns[j].startsWith("106500")) {
         stns[j] = "공항철도";
