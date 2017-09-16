@@ -19,18 +19,18 @@ class MetroStore {
     static func fetchStations(latitude : Double, longitude : Double) {
         let urlString = "http://172.16.0.35:8000/getNearStations"+"\(latitude)"+"\(longitude)"
         
-        Alamofire.request(urlString).responseJSON { response in
-            guard let json = response.result.value as? [[String : Any]]
-                else { return }
-            let line : Line = json.flatMap {
-                guard let name = $0["name"] as? String else { return nil }
-                guard let stationID = $0["station_id"] as? Int else { return nil }
-                guard let latitude = $0["lat"] as? Double else { return nil }
-                guard let longitude = $0["lng"] as? Double else { return nil }
-                
-                return Line(name: name, stationID: stationID, latitude: latitude, longitude: longitude, up: [], down: [])
-            }
-        }
+//        Alamofire.request(urlString).responseJSON { response in
+//            guard let json = response.result.value as? [[String : Any]]
+//                else { return }
+//            let line : Line = json.flatMap {
+//                guard let name = $0["name"] as? String else { return nil }
+//                guard let stationID = $0["station_id"] as? Int else { return nil }
+//                guard let latitude = $0["lat"] as? Double else { return nil }
+//                guard let longitude = $0["lng"] as? Double else { return nil }
+//                
+//                return Line(name: name, stationID: stationID, latitude: latitude, longitude: longitude, up: [], down: [])
+//            }
+//        }
         
     }
 

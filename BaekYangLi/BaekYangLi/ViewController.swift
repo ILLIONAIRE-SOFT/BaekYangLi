@@ -23,7 +23,20 @@ class ViewController: UIViewController {
         locationManager.startUpdatingLocation()
         
 //        MetroStore.fetchStations()
+//        MetroAPI.getNearestStations { (stations) in
+//            
+//        }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        StationStore.shared.getNearestStations { 
+            
+        }
+    }
+        
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,7 +56,7 @@ extension ViewController: CLLocationManagerDelegate {
                     let placemark = placemarks?[0]
                     if let coordinate = placemark?.location?.coordinate {
                         self.currentLocation = coordinate
-                        print(coordinate)
+//                        print(coordinate)
                     }
                 }
             }

@@ -9,43 +9,48 @@
 import Foundation
 import ObjectMapper
 
-struct Station {
-    var lines : [Line]?
+class Station: Mappable {
+    var station_id: Int?
+    var station_code: Int?
+    var line: Int?
+    var name: String?
+    var lat: Double?
+    var lng: Double?
+    var map_station_code: Int?
+    var distance: Double?
+    var up: [StationTimeInfo]?
+    var down: [StationTimeInfo]?
     
-    init(lines : [Line]) {
-        self.lines = lines
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        station_id <- map["station_id"]
+        station_code <- map["station_code"]
+        line <- map["line"]
+        name <- map["name"]
+        lat <- map["lat"]
+        lng <- map["lng"]
+        map_station_code <- map["map_station_code"]
+        distance <- map["D"]
+        up <- map["up"]
+        down <- map["down"]
+        
     }
 }
 
-struct Line {
-    var name : String?
-    var stationID : Int?
-    var latitude : Double?
-    var longitude : Double?
-    var up : [ArrivalTime]?
-    var down : [ArrivalTime]?
+class StationTimeInfo: Mappable {
     
-    init(name : String, stationID : Int, latitude: Double, longitude: Double, up : [ArrivalTime], down : [ArrivalTime]) {
-        self.name = name
-        self.stationID = stationID
-        self.latitude = latitude
-        self.longitude = longitude
-        self.up = up
-        self.down = down
+    var arriveTime: String?
+    var destinationName: String?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        arriveTime <- map["ARRIVETIME"]
+        destinationName <- map["DESTSTATION_NAME"]
     }
 }
-
-struct ArrivalTime {
-
-    var arrivalTime : Date?
-    var destination : String?
-    var leftTime : Int?
-
-    
-    init(arrivalTime : Date, destination : String, leftTime: Int) {
-        self.arrivalTime = arrivalTime
-        self.destination = destination
-        self.leftTime = leftTime
-    }
-}
-

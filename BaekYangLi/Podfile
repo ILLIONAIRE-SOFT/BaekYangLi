@@ -8,8 +8,9 @@ target 'BaekYangLi' do
   # Pods for BaekYangLi
 
   pod 'NVActivityIndicatorView'
-  pod 'Alamofire', '~> 4.5'
-  pod 'ObjectMapper', '~> 2.2'
+  pod 'Alamofire'
+  pod 'ObjectMapper'
+  pod 'AlamofireObjectMapper'
 
 
 
