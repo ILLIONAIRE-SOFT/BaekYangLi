@@ -25,7 +25,7 @@ class StationCourseCell: UITableViewCell {
         super.layoutSubviews()
         
         pointLabel.clipsToBounds = true
-        pointLabel.layer.cornerRadius = 12
+        pointLabel.layer.cornerRadius = 8
         lineNumberLabel.layer.cornerRadius = 8
     }
     
