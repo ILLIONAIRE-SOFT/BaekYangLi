@@ -46,14 +46,15 @@ function pathStartPoint(path) {
 function transition(path,marker,duration,reverse) {
     marker.transition()
         .duration(duration)
-        .attrTween("transform", translateAlong(path.node(),reverse));
+        .attrTween("transform", translateAlong(marker,path.node(),reverse));
 }
   
-function translateAlong(path, reverse) {
+function translateAlong(marker,path, reverse) {
     var l = path.getTotalLength();
     return function(i) {
       return function(t) {
         var p = path.getPointAtLength(reverse == 1 ? l - t * l : t * l);
+        if(t == 1) marker.remove();
         return "translate(" + (p.x-5) + "," + (p.y-5) + ")";//Move marker
       }
     }
@@ -73,16 +74,16 @@ setInterval(function(){
     ss = result;
     console.log(result);
     for(var i = 0; i < result.length; i++) {
-        console.log("addTrain("+result[i].train_no+","+String(result[i].mapCode)+","+getNextStation(result[i].mapCode,result[i].inout_tag)+",60000,0)");
-        addTrain(result[i].train_no,String(result[i].mapCode),getNextStation(result[i].mapCode),120000,0);
+        console.log("addTrain("+result[i].end_station+","+String(result[i].mapCode)+","+getNextStation(result[i].mapCode,result[i].inout_tag)+",60000,0)");
+        addTrain(result[i].station_num+result[i].end_station,String(result[i].mapCode),getNextStation(result[i].mapCode),120000,0);
     }
-},10000);
+},1000);
     
 function getNextStation(start, inout) {
     var x = Number(start);
     x += (inout == 1?1:-1);
     x = String(x);
     if(x.length == 3)
-        x += "0"+x;
+        x = "0"+x;
     return x;
 }
