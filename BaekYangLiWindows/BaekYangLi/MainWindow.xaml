@@ -32,7 +32,9 @@
                         <ImageBrush ImageSource="img/map.png"/>
                     </Button.Background>
                 </Button>
-                <Button  x:Name="SettingBtn" Width="50"  Height="50" Click="BtnClick" BorderBrush="{x:Null}">
+                
+                <StackPanel Height="218"/>
+                <Button  x:Name="SettingBtn" Width="50"  Height="50" Click="BtnClick"  BorderBrush="{x:Null}" Margin="2,0">
                     <Button.Background>
                         <ImageBrush ImageSource="img/setting.png"/>
                     </Button.Background>

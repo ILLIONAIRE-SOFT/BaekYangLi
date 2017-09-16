@@ -19,15 +19,14 @@
             <Grid Background="#FFEFEFEF">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1">
-                    <Image  Source="img/bar.png" Stretch="Fill" Margin="0,3"/>
-                    <Label x:Name="StartStationName" Content="찾는중" VerticalAlignment="Center" FontWeight="Bold" Foreground="#FFE8E8E8" FontSize="50" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="StartStationName" Content="찾는중" VerticalAlignment="Center" Foreground="#FF2B2B2B" FontSize="36" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Background="{x:Null}"/>
                 </Grid>
-                <Ellipse x:Name="LineFill" Fill="#FF17ADE1" Width="79" Height="80" />
-                <Label x:Name="LineNum" Content="?" VerticalAlignment="Center" FontWeight="Bold" Foreground="#FFE8E8E8" FontSize="50" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Ellipse x:Name="LineFill" Fill="#FFBF0D32" Width="52" Height="50" />
+                <Label x:Name="LineNum" Content="?" VerticalAlignment="Center" Foreground="#FFE8E8E8" FontSize="36" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="3">

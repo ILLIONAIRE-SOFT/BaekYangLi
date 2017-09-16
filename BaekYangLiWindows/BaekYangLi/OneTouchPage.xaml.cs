@@ -58,11 +58,12 @@ namespace BaekYangLi
         {
             NearStationNames.Clear();
             var name = Properties.Settings.Default.DefaultStationName;
-            LineNum.Visibility = Visibility.Hidden;
-            LineFill.Visibility = Visibility.Hidden;
+            var line = Properties.Settings.Default.DefaultStationLine;
+            var code = Properties.Settings.Default.DefaultStationCode;
+           
             NearStationNames.Add(new StationInfo
             {
-                name = name, line = "-1", code = "-1"
+                name = name, line = line, code = code
             });
             SetStationImage(0);
         }

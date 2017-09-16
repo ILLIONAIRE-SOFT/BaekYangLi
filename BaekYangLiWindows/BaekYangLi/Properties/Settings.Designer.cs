@@ -34,5 +34,29 @@ namespace BaekYangLi.Properties {
                 this["DefaultStationName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DefaultStationLine {
+            get {
+                return ((string)(this["DefaultStationLine"]));
+            }
+            set {
+                this["DefaultStationLine"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DefaultStationCode {
+            get {
+                return ((string)(this["DefaultStationCode"]));
+            }
+            set {
+                this["DefaultStationCode"] = value;
+            }
+        }
     }
 }
