@@ -10,7 +10,7 @@ import UIKit
 import NaverSpeech
 import NVActivityIndicatorView
 
-class VoiceViewController: UIViewController {
+class VoiceViewController: BaseViewController {
     
     let clientID = "yfE2GTNiX2oucOT8WPIh"
     
@@ -32,18 +32,21 @@ class VoiceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        voiceRecognitionButton.addTarget(self, action: #selector(self.tappedStartRecognize), for: .touchDown)
-        voiceRecognitionButton.addTarget(self, action: #selector(self.endRecognize), for: .touchUpInside)
-        
         initViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
     }
     
     // MARK: Methods
     private func initViews() {
         
-        self.voiceRecognitionButton.layer.cornerRadius = 40
-        self.activityIndicator.type = .lineScalePulseOut
-        self.activityIndicator.color = .blue
+        voiceRecognitionButton.addTarget(self, action: #selector(self.tappedStartRecognize), for: .touchDown)
+        voiceRecognitionButton.addTarget(self, action: #selector(self.endRecognize), for: .touchUpInside)
+        
+        voiceRecognitionButton.layer.cornerRadius = 40
     }
     
     func tappedStartRecognize() {
@@ -80,6 +83,16 @@ extension VoiceViewController: NSKRecognizerDelegate {
 
         if let result = aResult.results.first as? String {
             self.destinationLabel.text = result
+            
+            startLoading()
+            MetroAPI.getDestinationInfos(destination: result, completion: { (destinationInfos) in
+                self.stopLoading()
+                
+                let tabTwoSB = UIStoryboard(name: "Tab2", bundle: nil)
+                let metroCourseVC = tabTwoSB.instantiateViewController(withIdentifier: "MetroCourseViewController") as! MetroCourseViewController
+                metroCourseVC.destinationInfo = destinationInfos[0]
+                self.present(metroCourseVC, animated: true, completion: nil)
+            })
         }
     }
 }

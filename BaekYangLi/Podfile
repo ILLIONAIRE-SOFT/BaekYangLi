@@ -9,6 +9,10 @@ target 'BaekYangLi' do
 
   pod 'NVActivityIndicatorView'
   pod 'ARCL'
+  pod 'Alamofire'
+  pod 'ObjectMapper'
+  pod 'AlamofireObjectMapper'
+
 
 
   target 'BaekYangLiTests' do

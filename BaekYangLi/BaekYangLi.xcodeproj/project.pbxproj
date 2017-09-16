@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		3BDB40B3DDCB9EABB4068FAF /* Pods_BaekYangLiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92C995402072592E9CBE6DE /* Pods_BaekYangLiTests.framework */; };
 		491618151F6C4CD80008851F /* MetroAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491618141F6C4CD80008851F /* MetroAPI.swift */; };
+		491618181F6CB87E0008851F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491618171F6CB87E0008851F /* BaseViewController.swift */; };
+		4916181B1F6CBFC40008851F /* MetroCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916181A1F6CBFC40008851F /* MetroCourseViewController.swift */; };
 		492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B46F01F6C37F100C68D0E /* VoiceViewController.swift */; };
 		492B46F41F6C3B8C00C68D0E /* NaverSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */; };
 		492B46F51F6C3B8C00C68D0E /* NaverSpeech.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		492B46FB1F6C3EBA00C68D0E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 492B46F91F6C3EBA00C68D0E /* Info.plist */; };
 		492B46FC1F6C3EBA00C68D0E /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B46FA1F6C3EBA00C68D0E /* Languages.swift */; };
+		49EC75E71F6D34BE0039D7E5 /* StationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC75E61F6D34BE0039D7E5 /* StationStore.swift */; };
+		49EC75E91F6D43E70039D7E5 /* DestinationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC75E81F6D43E70039D7E5 /* DestinationInfo.swift */; };
+		49EC75EB1F6D6EDA0039D7E5 /* StationCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC75EA1F6D6EDA0039D7E5 /* StationCourseCell.swift */; };
 		8B5B32F29594FEC5A4A3610F /* Pods_BaekYangLiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170AC8BA0A00EA9AC96EDC2 /* Pods_BaekYangLiUITests.framework */; };
 		DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25A1F6C15F50096F550 /* AppDelegate.swift */; };
 		DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25C1F6C15F50096F550 /* ViewController.swift */; };
@@ -24,6 +29,10 @@
 		DA42D27E1F6C15F50096F550 /* BaekYangLiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D27D1F6C15F50096F550 /* BaekYangLiUITests.swift */; };
 		DA42D28C1F6C2C2B0096F550 /* Tab2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */; };
 		DA85B5C81F6CB0D2003C4436 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85B5C71F6CB0D2003C4436 /* ARViewController.swift */; };
+		DA4634A01F6D4A4900ABC39E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46349F1F6D4A4900ABC39E /* HomeTableViewCell.swift */; };
+		DA4634A21F6D540400ABC39E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4634A11F6D540400ABC39E /* SplashViewController.swift */; };
+		DA4634A41F6D636300ABC39E /* HomeTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4634A31F6D636300ABC39E /* HomeTableViewHeaderCell.swift */; };
+		DAB87E021F6CF50C00EFF83B /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB87E011F6CF50C00EFF83B /* Station.swift */; };
 		EB28AD1940FA3385714B3677 /* Pods_BaekYangLi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C83A8E431E89359702BBC3 /* Pods_BaekYangLi.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,11 +72,16 @@
 		2991645448E6985E472B6F6D /* Pods-BaekYangLi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaekYangLi.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaekYangLi/Pods-BaekYangLi.release.xcconfig"; sourceTree = "<group>"; };
 		45C83A8E431E89359702BBC3 /* Pods_BaekYangLi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaekYangLi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		491618141F6C4CD80008851F /* MetroAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetroAPI.swift; path = Utilities/MetroAPI.swift; sourceTree = "<group>"; };
+		491618171F6CB87E0008851F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
+		4916181A1F6CBFC40008851F /* MetroCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetroCourseViewController.swift; path = ViewControllers/MetroCourseViewController.swift; sourceTree = "<group>"; };
 		492B46F01F6C37F100C68D0E /* VoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoiceViewController.swift; path = ViewControllers/VoiceViewController.swift; sourceTree = "<group>"; };
 		492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NaverSpeech.framework; sourceTree = "<group>"; };
 		492B46F81F6C3EBA00C68D0E /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		492B46F91F6C3EBA00C68D0E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492B46FA1F6C3EBA00C68D0E /* Languages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		49EC75E61F6D34BE0039D7E5 /* StationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StationStore.swift; path = Model/StationStore.swift; sourceTree = "<group>"; };
+		49EC75E81F6D43E70039D7E5 /* DestinationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DestinationInfo.swift; path = Model/DestinationInfo.swift; sourceTree = "<group>"; };
+		49EC75EA1F6D6EDA0039D7E5 /* StationCourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StationCourseCell.swift; path = View/StationCourseCell.swift; sourceTree = "<group>"; };
 		56DDC7179C87F490814D2F02 /* Pods-BaekYangLiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaekYangLiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaekYangLiTests/Pods-BaekYangLiTests.release.xcconfig"; sourceTree = "<group>"; };
 		64A354E14D4685CFD7E0DA78 /* Pods-BaekYangLi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaekYangLi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaekYangLi/Pods-BaekYangLi.debug.xcconfig"; sourceTree = "<group>"; };
 		7A997902DE2573E38D89248C /* Pods-BaekYangLiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaekYangLiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaekYangLiUITests/Pods-BaekYangLiUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +103,10 @@
 		DA42D27F1F6C15F50096F550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tab2.storyboard; sourceTree = "<group>"; };
 		DA85B5C71F6CB0D2003C4436 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = ViewControllers/ARViewController.swift; sourceTree = "<group>"; };
+		DA46349F1F6D4A4900ABC39E /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewCell.swift; path = View/HomeTableViewCell.swift; sourceTree = "<group>"; };
+		DA4634A11F6D540400ABC39E /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = ViewControllers/SplashViewController.swift; sourceTree = "<group>"; };
+		DA4634A31F6D636300ABC39E /* HomeTableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewHeaderCell.swift; path = View/HomeTableViewHeaderCell.swift; sourceTree = "<group>"; };
+		DAB87E011F6CF50C00EFF83B /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,11 +148,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		491618161F6CB86F0008851F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				491618171F6CB87E0008851F /* BaseViewController.swift */,
+				DA4634A11F6D540400ABC39E /* SplashViewController.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		491618191F6CBF610008851F /* DestinationInfo */ = {
+			isa = PBXGroup;
+			children = (
+				4916181A1F6CBFC40008851F /* MetroCourseViewController.swift */,
+			);
+			name = DestinationInfo;
+			sourceTree = "<group>";
+		};
 		492B46EC1F6C379600C68D0E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				491618191F6CBF610008851F /* DestinationInfo */,
+				491618161F6CB86F0008851F /* Base */,
 				492B46F01F6C37F100C68D0E /* VoiceViewController.swift */,
 				DA85B5C71F6CB0D2003C4436 /* ARViewController.swift */,
+				DA42D25C1F6C15F50096F550 /* ViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -142,6 +180,9 @@
 		492B46ED1F6C37A300C68D0E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DAB87E011F6CF50C00EFF83B /* Station.swift */,
+				49EC75E61F6D34BE0039D7E5 /* StationStore.swift */,
+				49EC75E81F6D43E70039D7E5 /* DestinationInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -157,6 +198,7 @@
 		492B46EF1F6C37AE00C68D0E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA42D25A1F6C15F50096F550 /* AppDelegate.swift */,
 				DA42D2641F6C15F50096F550 /* Assets.xcassets */,
 				DA42D2691F6C15F50096F550 /* Info.plist */,
 			);
@@ -221,12 +263,13 @@
 		DA42D2591F6C15F50096F550 /* BaekYangLi */ = {
 			isa = PBXGroup;
 			children = (
-				492B46EF1F6C37AE00C68D0E /* Supporting Files */,
-				492B46EE1F6C37A700C68D0E /* Utilities */,
 				492B46ED1F6C37A300C68D0E /* Model */,
 				492B46EC1F6C379600C68D0E /* ViewControllers */,
 				DA42D25A1F6C15F50096F550 /* AppDelegate.swift */,
 				DA42D25C1F6C15F50096F550 /* ViewController.swift */,
+				DA46349E1F6D4A4400ABC39E /* View */,
+				492B46EF1F6C37AE00C68D0E /* Supporting Files */,
+				492B46EE1F6C37A700C68D0E /* Utilities */,
 				DA42D28D1F6C2F550096F550 /* StoryBoard */,
 			);
 			path = BaekYangLi;
@@ -258,6 +301,16 @@
 				DA42D2661F6C15F50096F550 /* LaunchScreen.storyboard */,
 			);
 			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		DA46349E1F6D4A4400ABC39E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA46349F1F6D4A4900ABC39E /* HomeTableViewCell.swift */,
+				49EC75EA1F6D6EDA0039D7E5 /* StationCourseCell.swift */,
+				DA4634A31F6D636300ABC39E /* HomeTableViewHeaderCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,9 +464,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BaekYangLiUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -441,9 +497,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BaekYangLi/Pods-BaekYangLi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -486,9 +545,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BaekYangLiTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -531,9 +593,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BaekYangLi-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -548,11 +613,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */,
+				4916181B1F6CBFC40008851F /* MetroCourseViewController.swift in Sources */,
 				492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */,
 				DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */,
 				491618151F6C4CD80008851F /* MetroAPI.swift in Sources */,
+				49EC75EB1F6D6EDA0039D7E5 /* StationCourseCell.swift in Sources */,
+				DA4634A41F6D636300ABC39E /* HomeTableViewHeaderCell.swift in Sources */,
+
+
+				491618181F6CB87E0008851F /* BaseViewController.swift in Sources */,
+				DA4634A01F6D4A4900ABC39E /* HomeTableViewCell.swift in Sources */,
 				492B46FC1F6C3EBA00C68D0E /* Languages.swift in Sources */,
+
 				DA85B5C81F6CB0D2003C4436 /* ARViewController.swift in Sources */,
+				DAB87E021F6CF50C00EFF83B /* Station.swift in Sources */,
+				49EC75E71F6D34BE0039D7E5 /* StationStore.swift in Sources */,
+				DA4634A21F6D540400ABC39E /* SplashViewController.swift in Sources */,
+				49EC75E91F6D43E70039D7E5 /* DestinationInfo.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
