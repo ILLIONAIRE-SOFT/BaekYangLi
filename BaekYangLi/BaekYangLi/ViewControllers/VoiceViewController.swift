@@ -32,9 +32,15 @@ class VoiceViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         initViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        MetroAPI.getDestinationInfos(destination: "충무로") { (destinationInfos) in
+            print(destinationInfos[0].shtTransferMsg)
+        }
     }
     
     // MARK: Methods
