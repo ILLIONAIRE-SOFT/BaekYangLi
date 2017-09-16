@@ -26,7 +26,6 @@
 		DA42D27E1F6C15F50096F550 /* BaekYangLiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D27D1F6C15F50096F550 /* BaekYangLiUITests.swift */; };
 		DA42D28C1F6C2C2B0096F550 /* Tab2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */; };
 		DA42D28F1F6C305D0096F550 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D28E1F6C305D0096F550 /* LocationService.swift */; };
-		DAB87E001F6CF3EE00EFF83B /* MetroAPI2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB87DFF1F6CF3EE00EFF83B /* MetroAPI2.swift */; };
 		DAB87E021F6CF50C00EFF83B /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB87E011F6CF50C00EFF83B /* Station.swift */; };
 		DAB87E041F6CFD2D00EFF83B /* MetroStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB87E031F6CFD2D00EFF83B /* MetroStore.swift */; };
 		EB28AD1940FA3385714B3677 /* Pods_BaekYangLi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C83A8E431E89359702BBC3 /* Pods_BaekYangLi.framework */; };
@@ -96,7 +95,6 @@
 		DA42D27F1F6C15F50096F550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA42D28B1F6C2C2B0096F550 /* Tab2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tab2.storyboard; sourceTree = "<group>"; };
 		DA42D28E1F6C305D0096F550 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		DAB87DFF1F6CF3EE00EFF83B /* MetroAPI2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroAPI2.swift; sourceTree = "<group>"; };
 		DAB87E011F6CF50C00EFF83B /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		DAB87E031F6CFD2D00EFF83B /* MetroStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,7 +168,6 @@
 		492B46ED1F6C37A300C68D0E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DAB87DFF1F6CF3EE00EFF83B /* MetroAPI2.swift */,
 				DAB87E011F6CF50C00EFF83B /* Station.swift */,
 				DAB87E031F6CFD2D00EFF83B /* MetroStore.swift */,
 			);
@@ -451,7 +448,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		38A277710052E3FE76C430AC /* [CP] Copy Pods Resources */ = {
@@ -532,7 +529,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B26CFB5A26A657F5CA182C1A /* [CP] Embed Pods Frameworks */ = {
@@ -580,7 +577,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -596,7 +593,6 @@
 				492B46F11F6C37F100C68D0E /* VoiceViewController.swift in Sources */,
 				DA42D28F1F6C305D0096F550 /* LocationService.swift in Sources */,
 				DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */,
-				DAB87E001F6CF3EE00EFF83B /* MetroAPI2.swift in Sources */,
 				491618151F6C4CD80008851F /* MetroAPI.swift in Sources */,
 				491618181F6CB87E0008851F /* BaseViewController.swift in Sources */,
 				492B46FC1F6C3EBA00C68D0E /* Languages.swift in Sources */,

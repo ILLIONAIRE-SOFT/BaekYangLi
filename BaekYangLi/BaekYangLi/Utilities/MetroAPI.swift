@@ -7,8 +7,17 @@
 //
 
 import Foundation
+import Alamofire
+import ObjectMapper
+
+
+struct APIType {
+    static let getNearestStations = "getNearStations"
+}
 
 struct MetroAPI {
+    
+    static let server_url = "172.16.0.35:8000/"
     
     static func getDestinationInfo(completion: @escaping () -> ()) {
         
@@ -17,4 +26,11 @@ struct MetroAPI {
             completion()
         }
     }
+    
+    static func getNearestStations(completion: @escaping ([Station]) -> ()) {
+        Alamofire.request("\(server_url)\(APIType.getNearestStations)", method: .get, parameters: nil, encoding: JSONEncoding.default)
+//        Alamofire.request(<#T##url: URLConvertible##URLConvertible#>, method: <#T##HTTPMethod#>, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>)
+        
+    }
+    
 }
