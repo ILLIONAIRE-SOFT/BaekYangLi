@@ -11,7 +11,7 @@ target 'BaekYangLi' do
   pod 'Alamofire'
   pod 'ObjectMapper'
   pod 'AlamofireObjectMapper'
-
+  pod 'SnapKit'
 
 
   target 'BaekYangLiTests' do
