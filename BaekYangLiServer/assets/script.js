@@ -6,8 +6,12 @@ setTimeout(function() {
     svg = d3.select("body").select("svg#map");
 }, 500);
 
-function findStationCircle(num) {
-    return x["M"+num];
+function findStationColor(num) {
+    try {
+        return x["M"+num].getAttribute("stroke");
+    } catch (err) {
+        return "#052f93";
+    }
 }
 
 function findPath(start, dest) {
@@ -17,6 +21,7 @@ function findPath(start, dest) {
 var trainList = new Object();
 
 function addTrain(trainNum, start, dest, duration, percentage) {
+    console.log("addTrain");
     var marker = svg.append("rect");
     if(trainList[trainNum] != null)
         trainList[trainNum].remove();
@@ -24,7 +29,7 @@ function addTrain(trainNum, start, dest, duration, percentage) {
     var reverse =  start > dest ? 1 : 0;
     var path = findPath(start,dest);
     var startPoint = pathStartPoint(path);
-    var color = findStationCircle(start).getAttribute("stroke");
+    var color = findStationColor(start);
     marker.attr("width", 10).attr("height",10)
       .attr("transform", "translate(" + startPoint + ")").attr("fill",color);
     transition(path,marker,duration, start > dest ? 1 : 0);
@@ -54,7 +59,30 @@ function translateAlong(path, reverse) {
     }
 }
 
-setInterval(function {
-    //code for the drums playing goes here
-},8000);
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+var ss;
+
+setInterval(function(){
+    var result = JSON.parse(httpGet("/getTrains"));
+    ss = result;
+    console.log(result);
+    for(var i = 0; i < result.length; i++) {
+        console.log("addTrain("+result[i].train_no+","+String(result[i].mapCode)+","+getNextStation(result[i].mapCode,result[i].inout_tag)+",60000,0)");
+        addTrain(result[i].train_no,String(result[i].mapCode),getNextStation(result[i].mapCode),120000,0);
+    }
+},10000);
     
+function getNextStation(start, inout) {
+    var x = Number(start);
+    x += (inout == 1?1:-1);
+    x = String(x);
+    if(x.length == 3)
+        x += "0"+x;
+    return x;
+}
