@@ -11,35 +11,63 @@ import UIKit
 class MetroCourseViewController: UIViewController {
     
     var destinationInfo: DestinationInfo?
+    var stations: [String] = []
+    
     @IBOutlet var destinationLabel: UILabel!
+    @IBOutlet var startLabel: UILabel!
+    @IBOutlet var messageLabel: UILabel!
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        if let startStationName = destinationInfo?.statnTnm {
-            destinationLabel.text = startStationName
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        if let destinationName = destinationInfo?.statnTnm,
+            let startName = destinationInfo?.statnFnm {
+            destinationLabel.text = destinationName
+            startLabel.text = startName
         }
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if let message = destinationInfo?.shtTransferMsg {
+            messageLabel.text = message
+        }
+        
+        if let stationsString = destinationInfo?.shtStatnNm {
+            let stations = stationsString.components(separatedBy: ",")
+            
+            for station in stations {
+                let st = station.trimmingCharacters(in: CharacterSet.whitespaces)
+                
+                if st != "" {
+                    self.stations.append(st)
+                }
+            }
+        }
     }
     
-    @IBAction func tappedComplete(_ sender: UIButton) {
+    // MARK: IBActions
+    @IBAction func tappedDone(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension MetroCourseViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.stations.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StationCourseCell") as! StationCourseCell
+        
+        cell.initCell(with: stations[indexPath.row])
+        
+        return cell
+    }
 }
