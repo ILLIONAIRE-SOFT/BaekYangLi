@@ -21,6 +21,8 @@ class StationCourseCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        pointLabel.clipsToBounds = true
+        pointLabel.layer.cornerRadius = 12
     }
     
     override func awakeFromNib() {
@@ -36,7 +38,6 @@ class StationCourseCell: UITableViewCell {
     }
     
     public func initCell(with destination: String) {
-        pointLabel.layer.cornerRadius = 12
         stationName.text = destination
     }
 
