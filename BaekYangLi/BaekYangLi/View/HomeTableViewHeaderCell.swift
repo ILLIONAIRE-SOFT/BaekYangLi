@@ -11,7 +11,7 @@ import UIKit
 
 class HomeTableViewHeaderCell: UITableViewCell {
     
-    @IBOutlet var distance: UILabel!
+//    @IBOutlet var distance: UILabel!
     @IBOutlet var stationName: UILabel!
     
     override func awakeFromNib() {
@@ -27,9 +27,9 @@ class HomeTableViewHeaderCell: UITableViewCell {
     
     func initCell(with station : Station) {
         self.stationName.text = station.name
-        if let distance = station.distance {
-            self.distance.text = "\(distance)m"
-        }
+//        if let distance = station.distance {
+//            self.distance.text = "\(distance)m"
+//        }
     }
     
 }

@@ -65,32 +65,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfS-NB-tZS">
-                                                    <rect key="frame" x="12" y="14.5" width="73" height="38.5"/>
+                                                    <rect key="frame" x="151" y="14.5" width="73" height="38.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDi-9h-BPm">
-                                                    <rect key="frame" x="326" y="26.5" width="33" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="gDi-9h-BPm" secondAttribute="trailing" constant="16" id="cN4-8S-jZZ"/>
-                                                <constraint firstItem="gDi-9h-BPm" firstAttribute="centerY" secondItem="FzQ-7s-Rh0" secondAttribute="centerY" id="d5d-O9-iHd"/>
-                                                <constraint firstItem="tfS-NB-tZS" firstAttribute="centerY" secondItem="FzQ-7s-Rh0" secondAttribute="centerY" id="g5f-jG-3qw"/>
-                                                <constraint firstItem="tfS-NB-tZS" firstAttribute="top" secondItem="FzQ-7s-Rh0" secondAttribute="topMargin" constant="6.5" id="iGU-DF-kBe"/>
-                                                <constraint firstItem="tfS-NB-tZS" firstAttribute="leading" secondItem="FzQ-7s-Rh0" secondAttribute="leadingMargin" constant="4" id="ulh-94-Gx6"/>
+                                                <constraint firstItem="tfS-NB-tZS" firstAttribute="centerX" secondItem="FzQ-7s-Rh0" secondAttribute="centerX" id="Fca-f9-cZc"/>
+                                                <constraint firstItem="tfS-NB-tZS" firstAttribute="centerY" secondItem="FzQ-7s-Rh0" secondAttribute="centerY" id="N5A-wE-W2K"/>
                                             </constraints>
                                             <connections>
                                                 <outlet property="stationName" destination="tfS-NB-tZS" id="jyH-H1-k7o"/>
                                             </connections>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="distance" destination="gDi-9h-BPm" id="hrA-qU-6kY"/>
                                             <outlet property="stationName" destination="tfS-NB-tZS" id="KwC-wP-Aue"/>
                                         </connections>
                                     </tableViewCell>
