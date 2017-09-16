@@ -64,21 +64,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3s-4H-KVy">
-                                                    <rect key="frame" x="293" y="23" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3s-4H-KVy">
+                                                    <rect key="frame" x="328" y="27" width="31" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfS-NB-tZS">
-                                                    <rect key="frame" x="37" y="23" width="187" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfS-NB-tZS">
+                                                    <rect key="frame" x="12" y="14.5" width="73" height="38.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="G3s-4H-KVy" secondAttribute="trailing" constant="8" id="Oxv-MR-WdE"/>
+                                                <constraint firstItem="G3s-4H-KVy" firstAttribute="centerY" secondItem="FzQ-7s-Rh0" secondAttribute="centerY" id="XQ1-LR-LMv"/>
+                                                <constraint firstItem="tfS-NB-tZS" firstAttribute="centerY" secondItem="FzQ-7s-Rh0" secondAttribute="centerY" id="g5f-jG-3qw"/>
+                                                <constraint firstItem="tfS-NB-tZS" firstAttribute="leading" secondItem="FzQ-7s-Rh0" secondAttribute="leadingMargin" constant="4" id="ulh-94-Gx6"/>
+                                            </constraints>
                                             <connections>
                                                 <outlet property="distance" destination="G3s-4H-KVy" id="VMh-QL-VJ6"/>
                                                 <outlet property="stationName" destination="tfS-NB-tZS" id="jyH-H1-k7o"/>
