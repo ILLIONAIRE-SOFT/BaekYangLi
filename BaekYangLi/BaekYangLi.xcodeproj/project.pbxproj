@@ -16,6 +16,7 @@
 		492B46F51F6C3B8C00C68D0E /* NaverSpeech.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 492B46F31F6C3B8600C68D0E /* NaverSpeech.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		492B46FB1F6C3EBA00C68D0E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 492B46F91F6C3EBA00C68D0E /* Info.plist */; };
 		492B46FC1F6C3EBA00C68D0E /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B46FA1F6C3EBA00C68D0E /* Languages.swift */; };
+		49EC75E71F6D34BE0039D7E5 /* StationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC75E61F6D34BE0039D7E5 /* StationStore.swift */; };
 		8B5B32F29594FEC5A4A3610F /* Pods_BaekYangLiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170AC8BA0A00EA9AC96EDC2 /* Pods_BaekYangLiUITests.framework */; };
 		DA42D25B1F6C15F50096F550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25A1F6C15F50096F550 /* AppDelegate.swift */; };
 		DA42D25D1F6C15F50096F550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42D25C1F6C15F50096F550 /* ViewController.swift */; };
@@ -74,6 +75,7 @@
 		492B46F81F6C3EBA00C68D0E /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		492B46F91F6C3EBA00C68D0E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492B46FA1F6C3EBA00C68D0E /* Languages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		49EC75E61F6D34BE0039D7E5 /* StationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StationStore.swift; path = Model/StationStore.swift; sourceTree = "<group>"; };
 		56DDC7179C87F490814D2F02 /* Pods-BaekYangLiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaekYangLiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaekYangLiTests/Pods-BaekYangLiTests.release.xcconfig"; sourceTree = "<group>"; };
 		64A354E14D4685CFD7E0DA78 /* Pods-BaekYangLi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaekYangLi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaekYangLi/Pods-BaekYangLi.debug.xcconfig"; sourceTree = "<group>"; };
 		7A997902DE2573E38D89248C /* Pods-BaekYangLiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaekYangLiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaekYangLiUITests/Pods-BaekYangLiUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				DAB87E011F6CF50C00EFF83B /* Station.swift */,
 				DAB87E031F6CFD2D00EFF83B /* MetroStore.swift */,
+				49EC75E61F6D34BE0039D7E5 /* StationStore.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				491618181F6CB87E0008851F /* BaseViewController.swift in Sources */,
 				492B46FC1F6C3EBA00C68D0E /* Languages.swift in Sources */,
 				DAB87E021F6CF50C00EFF83B /* Station.swift in Sources */,
+				49EC75E71F6D34BE0039D7E5 /* StationStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

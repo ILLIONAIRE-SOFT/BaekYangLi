@@ -49,9 +49,8 @@ class StationTimeInfo: Mappable {
         
     }
     
-    
     func mapping(map: Map) {
         arriveTime <- map["ARRIVETIME"]
-        destinationName <- map["DESTINATION_NAME"]
+        destinationName <- map["DESTSTATION_NAME"]
     }
 }

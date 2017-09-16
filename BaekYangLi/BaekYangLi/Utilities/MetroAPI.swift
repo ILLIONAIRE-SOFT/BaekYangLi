@@ -32,9 +32,7 @@ struct MetroAPI {
             switch response.result {
             case .success:
                 if let stations = response.result.value {
-                    for station in stations {
-                        print(station.name)
-                    }
+                    completion(stations)
                 }
             case .failure(let error):
                 print(error)

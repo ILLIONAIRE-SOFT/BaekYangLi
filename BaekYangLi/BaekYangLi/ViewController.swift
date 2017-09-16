@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        MetroAPI.getNearestStations { (stations) in
+        StationStore.shared.getNearestStations { 
             
         }
     }
