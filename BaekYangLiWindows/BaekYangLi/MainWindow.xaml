@@ -19,9 +19,12 @@
                 <StackPanel.Background>
                     <ImageBrush/>
                 </StackPanel.Background>
-                <Button x:Name="OneTouchBtn"  Height="50" Click="BtnClick" BorderBrush="{x:Null}">
+                <Button x:Name="OneTouchBtn"  Height="50" Click="BtnClick">
+                    <Button.BorderBrush>
+                        <ImageBrush/>
+                    </Button.BorderBrush>
                     <Button.Background>
-                        <ImageBrush ImageSource="img/map.png" />
+                        <ImageBrush ImageSource="img/one.png" />
                     </Button.Background>
                 </Button>
                 <Button x:Name="MapBtn"    Height="50" Click="BtnClick" BorderBrush="{x:Null}">
@@ -35,7 +38,7 @@
                     </Button.Background>
                 </Button>
             </StackPanel>
-            
+
         </Grid>
 
     </Grid>
