@@ -13,6 +13,9 @@ class MetroCourseViewController: UIViewController {
     var destinationInfo: DestinationInfo?
     var stations: [String] = []
     
+    @IBOutlet var stationCountLabel: UILabel!
+    @IBOutlet var transferLabel: UILabel!
+    @IBOutlet var timeToDestination: UILabel!
     @IBOutlet var destinationLabel: UILabel!
     @IBOutlet var startLabel: UILabel!
     @IBOutlet var tableView: UITableView!
@@ -29,10 +32,6 @@ class MetroCourseViewController: UIViewController {
             startLabel.text = startName
         }
         
-        if let message = destinationInfo?.shtTransferMsg {
-//            messageLabel.text = message
-        }
-        
         if let stationsString = destinationInfo?.shtStatnNm {
             let stations = stationsString.components(separatedBy: ",")
             
@@ -43,6 +42,18 @@ class MetroCourseViewController: UIViewController {
                     self.stations.append(st)
                 }
             }
+        }
+        
+        if let timeToDest = destinationInfo?.shtTravelTm {
+            self.timeToDestination.text = "\(timeToDest)분"
+        }
+        
+        if let stationCount = destinationInfo?.shtStatnCnt {
+            self.stationCountLabel.text = "\(stationCount)개 역"
+        }
+        
+        if let transferCount = destinationInfo?.shtTransferCnt {
+            self.transferLabel.text = "\(transferCount)번 환승"
         }
     }
     
