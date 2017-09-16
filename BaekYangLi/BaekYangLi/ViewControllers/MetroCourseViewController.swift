@@ -10,15 +10,15 @@ import UIKit
 
 class MetroCourseViewController: UIViewController {
     
-    var destinationName: String?
+    var destinationInfo: DestinationInfo?
     @IBOutlet var destinationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if let name = destinationName {
-            destinationLabel.text = name
+        if let startStationName = destinationInfo?.statnTnm {
+            destinationLabel.text = startStationName
         }
         
     }
