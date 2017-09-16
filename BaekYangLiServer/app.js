@@ -8,6 +8,7 @@ var urlencode = require('urlencode');
 var connection = mysql.createConnection(config.db);
 connection.connect();
 
+var htmlparser = require('htmlparser2');
 var request = require('sync-request');
 var allStations;
 var sql = "SELECT *, (SELECT COUNT(*) from station where name = A.name ) AS transfer from station AS A";
@@ -60,7 +61,7 @@ app.get('/getStationsByCode/:station_code', function(req ,res) {
 });
 
 app.get('/getNearStations/:lat/:lng', function(req, res) {
-  var sql = "SELECT *, (lat-"+req.params.lat+")*(lat-"+req.params.lat+")+(lng-"+req.params.lng+")*(lng-"+req.params.lng+") AS D from station order by D limit 5;";
+  var sql = "SELECT *, (lat-"+req.params.lat+")*(lat-"+req.params.lat+")+(lng-"+req.params.lng+")*(lng-"+req.params.lng+") AS D from station order by D limit 8;";
   connection.query(sql, function(err, result) {
     for(var i = 0; i < result.length; i++) {
       result[i].up =  getArrivalTimeOfStation(result[i].station_code,1);
@@ -103,6 +104,49 @@ app.get('/getTrains', function(req, res) {
   });
 })
 
+app.get('/getTrainsLive', function(req, res) {
+  var startParse = 0;
+  var line = 0;
+  var infos = new Object();
+  
+  var data = request('GET',"https://smss.seoulmetro.co.kr/traininfo/traininfoUserMap.do").getBody('utf8');
+  var parser = new htmlparser.Parser({
+      onopentag: function(name, attribs){
+          if(name == "div") {
+              if(attribs.class != null) {
+                  if(attribs.class.endsWith("line")) {
+                      startParse = 0;
+                  }
+                  if(attribs.class.endsWith("line_metro")) {
+                      line = attribs.class.slice(0,1);
+                      startParse = 1;
+                      infos[line] = new Array();
+                      return;
+                  }
+                  if(startParse) {
+                      infos[line][infos[line].length] = attribs;
+                  }
+              }
+          }
+          console.log(name, attribs);
+      },
+      ontext: function(text){
+          console.log(text);
+      },
+      onclosetag: function(tagname){
+          console.log(tagname);
+      }
+  }, {decodeEntities: true});
+  parser.write(data);
+  parser.end();
+  for(var i = 1; i <= 8; i++) {
+    for(var j = 0; j < infos[i].length; j++) {
+      infos[i][j] = getInfo(i,infos[i][j]);
+    }
+  }
+  res.send(infos);
+});
+
 server.listen(8000, function() {
   console.log('Express server listening on port ' + server.address().port);
 });
@@ -143,4 +187,18 @@ function getMapStationCodeByCode(code) {
       return allStations[i].map_station_code;
     }
   }
+}
+
+function getInfo(line, rawData) {
+  if(rawData.title == null)
+    return rawData;
+  rawData.stnName = rawData.title.split(" ")[2];
+  rawData.line = line;
+  rawData.status = rawData.title.split(" ")[3];
+  rawData.dest = rawData.title.split(" ")[4];
+  for(var i = 0; i < allStations.length; i++)
+    if(allStations[i].line == line && allStations[i].name == rawData.stnName) {
+      rawData.station_code = allStations[i].station_code;
+    }
+  return rawData;
 }
