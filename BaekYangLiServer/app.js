@@ -18,6 +18,11 @@ app.get('/subwayLiveView', function(req, res) {
   res.sendFile(process.cwd()+'/view/liveView.html');
 });
 
+app.get('/assets/:file', function(req, res) {
+  res.sendFile(process.cwd()+'/assets/'+req.params.file);
+});
+
+
 app.get('/world.html', function (req, res) {
   res.send('Hello World');
 });
