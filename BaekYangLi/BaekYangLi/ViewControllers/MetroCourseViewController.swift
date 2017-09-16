@@ -15,7 +15,6 @@ class MetroCourseViewController: UIViewController {
     
     @IBOutlet var destinationLabel: UILabel!
     @IBOutlet var startLabel: UILabel!
-    @IBOutlet var messageLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -31,7 +30,7 @@ class MetroCourseViewController: UIViewController {
         }
         
         if let message = destinationInfo?.shtTransferMsg {
-            messageLabel.text = message
+//            messageLabel.text = message
         }
         
         if let stationsString = destinationInfo?.shtStatnNm {
