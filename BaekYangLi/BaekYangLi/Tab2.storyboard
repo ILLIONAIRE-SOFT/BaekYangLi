@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +30,7 @@
                                 </constraints>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도착지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3y-4U-8Xe">
-                                <rect key="frame" x="114.5" y="128" width="148" height="68.5"/>
+                                <rect key="frame" x="113.5" y="128" width="148" height="68.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="57"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -86,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도착지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpt-1Q-akr">
-                                <rect key="frame" x="125.5" y="84" width="125" height="71"/>
+                                <rect key="frame" x="125.5" y="84" width="125" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -98,28 +99,28 @@
                                     <action selector="tappedComplete:" destination="cI0-9X-CWv" eventType="touchUpInside" id="FbJ-Cp-pt4"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapImage" translatesAutoresizingMaskIntoConstraints="NO" id="4PV-bi-PvL">
-                                <rect key="frame" x="0.0" y="203" width="375" height="260"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="260" id="grT-4c-Faw"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4z-2p-wWI">
+                                <rect key="frame" x="52" y="323" width="271" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Vpt-1Q-akr" firstAttribute="centerX" secondItem="Lhq-bj-a8N" secondAttribute="centerX" id="2ml-QV-jp0"/>
+                            <constraint firstItem="V4z-2p-wWI" firstAttribute="centerY" secondItem="Lhq-bj-a8N" secondAttribute="centerY" id="7hM-6s-x1w"/>
                             <constraint firstItem="Vpt-1Q-akr" firstAttribute="top" secondItem="SdM-Ma-Dn9" secondAttribute="bottom" constant="64" id="A6s-Dr-RJa"/>
-                            <constraint firstItem="4PV-bi-PvL" firstAttribute="leading" secondItem="Lhq-bj-a8N" secondAttribute="leading" id="JaB-Fa-A7n"/>
-                            <constraint firstAttribute="trailing" secondItem="4PV-bi-PvL" secondAttribute="trailing" id="Jxx-GQ-dLD"/>
                             <constraint firstItem="FvH-oj-xLG" firstAttribute="top" secondItem="K3m-uo-Msf" secondAttribute="bottom" constant="34" id="MRz-D2-6Eh"/>
-                            <constraint firstItem="4PV-bi-PvL" firstAttribute="top" secondItem="Vpt-1Q-akr" secondAttribute="bottom" constant="48" id="cBQ-Zl-Vq0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V4z-2p-wWI" secondAttribute="trailing" constant="36" id="fj9-cb-ZOb"/>
+                            <constraint firstItem="V4z-2p-wWI" firstAttribute="centerX" secondItem="Lhq-bj-a8N" secondAttribute="centerX" id="lSm-Sy-4wN"/>
                             <constraint firstItem="K3m-uo-Msf" firstAttribute="centerX" secondItem="Lhq-bj-a8N" secondAttribute="centerX" id="lb0-aH-nvX"/>
-                            <constraint firstItem="4PV-bi-PvL" firstAttribute="centerY" secondItem="Lhq-bj-a8N" secondAttribute="centerY" id="uFX-gY-UwG"/>
-                            <constraint firstItem="4PV-bi-PvL" firstAttribute="centerX" secondItem="Lhq-bj-a8N" secondAttribute="centerX" id="wAV-oj-NFT"/>
+                            <constraint firstItem="V4z-2p-wWI" firstAttribute="leading" secondItem="Lhq-bj-a8N" secondAttribute="leadingMargin" constant="36" id="zlT-qA-m4t"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="destinationLabel" destination="Vpt-1Q-akr" id="x9f-gX-RGO"/>
+                        <outlet property="messageLabel" destination="V4z-2p-wWI" id="mdj-eZ-F7V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OM8-AW-yqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -127,7 +128,4 @@
             <point key="canvasLocation" x="834" y="-72"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="mapImage" width="526" height="503"/>
-    </resources>
 </document>
