@@ -107,7 +107,8 @@ app.get('/getStations', function(req, res) {
 });
 
 app.get('/findRoute/:start/:dest', function(req, res) {
-  console.log(req.params);
+  if(req.params.dest.trim().endsWith("역"))
+    req.params.dest = req.params.dest.slice(0, req.params.dest.length-1);
   res.send(getRoutes(req.params.start, req.params.dest));
 })
 
