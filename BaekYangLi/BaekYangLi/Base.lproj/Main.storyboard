@@ -5,13 +5,14 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="BaekYangLi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="HomeViewController" customModule="BaekYangLi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -34,24 +35,39 @@
                                     <constraint firstAttribute="height" constant="128" id="BPR-Hp-pKd"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tHR-lm-oa0">
-                                <rect key="frame" x="0.0" y="20" width="375" height="475"/>
-                            </scrollView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wCt-xg-3Gu">
+                                <rect key="frame" x="0.0" y="20" width="375" height="464"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kFC-JY-yzc">
+                                <rect key="frame" x="10" y="494" width="289" height="35"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tHR-lm-oa0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3vT-Sh-fWy"/>
                             <constraint firstAttribute="trailing" secondItem="kBf-wY-GHf" secondAttribute="trailing" id="4gF-VL-3WD"/>
-                            <constraint firstAttribute="trailing" secondItem="tHR-lm-oa0" secondAttribute="trailing" id="DKr-qO-kzk"/>
-                            <constraint firstItem="tHR-lm-oa0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Jhl-vF-yJ2"/>
+                            <constraint firstItem="kBf-wY-GHf" firstAttribute="top" secondItem="wCt-xg-3Gu" secondAttribute="bottom" constant="55" id="HbG-a8-tBc"/>
+                            <constraint firstItem="kBf-wY-GHf" firstAttribute="top" secondItem="kFC-JY-yzc" secondAttribute="bottom" constant="10" id="I9W-P6-9LS"/>
+                            <constraint firstAttribute="trailing" secondItem="wCt-xg-3Gu" secondAttribute="trailing" id="NzP-aO-lgp"/>
+                            <constraint firstItem="kFC-JY-yzc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="RIu-1k-U16"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kFC-JY-yzc" secondAttribute="trailing" constant="60" id="RtR-34-hp6"/>
+                            <constraint firstItem="wCt-xg-3Gu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="XSn-eI-Hn6"/>
+                            <constraint firstItem="wCt-xg-3Gu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ccd-TL-Atl"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kBf-wY-GHf" secondAttribute="bottom" id="mvk-DO-pyl"/>
+                            <constraint firstItem="kFC-JY-yzc" firstAttribute="top" secondItem="wCt-xg-3Gu" secondAttribute="bottom" constant="10" id="nWU-Yd-EMd"/>
                             <constraint firstItem="kBf-wY-GHf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ty5-vg-YcM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="wCt-xg-3Gu" id="4Nz-dL-koP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-161" y="137"/>
+            <point key="canvasLocation" x="-162.40000000000001" y="8.5457271364317844"/>
         </scene>
     </scenes>
 </document>

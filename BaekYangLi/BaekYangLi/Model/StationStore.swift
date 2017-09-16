@@ -24,10 +24,24 @@ class StationStore {
                 return first.distance! < second.distance!
             })
             
-            
+            var tempStations = [Station]()
+            var tempName = ""
             for station in self.nearestStations {
-                print(station.name!)
+                if tempName == "" || tempName == station.name {
+                    tempStations.append(station)
+                    if let name = station.name {
+                        tempName = name
+                    }
+                } else {
+                    self.groupedStations.append(tempStations)
+                    tempStations.removeAll()
+                    tempStations.append(station)
+                    if let name = station.name {
+                        tempName = name
+                    }
+                }
             }
+            self.groupedStations.append(tempStations)
         }
     }
 }

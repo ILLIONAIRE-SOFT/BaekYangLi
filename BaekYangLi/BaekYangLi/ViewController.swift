@@ -9,23 +9,24 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
+    @IBOutlet var tableView: UITableView!
+    
     let locationManager = CLLocationManager()
     var loadLocation : Bool = true
     var currentLocation = CLLocationCoordinate2D()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.tableView.delegate = self
+//        self.tableView.dataSource = self
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
-//        MetroStore.fetchStations()
-//        MetroAPI.getNearestStations { (stations) in
-//            
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,17 +36,12 @@ class ViewController: UIViewController {
             
         }
     }
-        
-    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
 
 
-extension ViewController: CLLocationManagerDelegate {
+
+extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if loadLocation {
             CLGeocoder().reverseGeocodeLocation(manager.location!) { (placemarks, error) in
@@ -56,7 +52,6 @@ extension ViewController: CLLocationManagerDelegate {
                     let placemark = placemarks?[0]
                     if let coordinate = placemark?.location?.coordinate {
                         self.currentLocation = coordinate
-//                        print(coordinate)
                     }
                 }
             }
