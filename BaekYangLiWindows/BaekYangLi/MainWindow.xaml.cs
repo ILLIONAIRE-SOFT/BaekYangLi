@@ -24,50 +24,22 @@ namespace BaekYangLi
     /// </summary>
     public partial class MainWindow : Window
     {
-        GeoCoordinateWatcher GW = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
-
+       
         public MainWindow()
         {
             InitializeComponent();
-            InsideFrame.Navigate(new MapPage());
-            GetGPS();
+           
         }
 
-        public void GetGPS()
+
+        private void BtnClick(object sender, RoutedEventArgs e)
         {
-            bool started = GW.TryStart(true, TimeSpan.FromMilliseconds(2000));
-            if (!started)
-            {
-                Console.WriteLine("GeoCoordinateWatcher timed out on start.");
-            }
-
-            GW.PositionChanged += PositionChanged;
+            if (sender == OneTouchBtn)
+                InsideFrame.Navigate(new OneTouchPage());
+            else if (sender == MapBtn)
+                InsideFrame.Navigate(new MapPage());
+            else
+                InsideFrame.Navigate(new Page());
         }
-
-        private void PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
-        {
-            if (e.Position.Location != null)
-            {
-                var url = String.Format("http://172.16.0.35:8000/getNearStations/{0}/{1}",
-                    e.Position.Location.Latitude,
-                    e.Position.Location.Longitude);
-               
-                // Json String to Object 로 반환
-                JArray jo = JArray.Parse(GetResponseString(url));
-
-                GW.Stop();
-                
-            }
-
-        }
-
-        public string GetResponseString(string url)
-        {
-            WebClient client = new WebClient();
-            client.Encoding = Encoding.UTF8;
-            // 웹 URL을 통해 String 데이터로 반환
-            return client.DownloadString(url);
-        }
-        
     }
 }

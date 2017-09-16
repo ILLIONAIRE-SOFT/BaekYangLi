@@ -14,6 +14,29 @@
         <Grid Grid.Column="1"  Background="White" Margin="0,0,0,0.5" >
             <Frame x:Name="InsideFrame" NavigationUIVisibility="Hidden"/>
         </Grid>
+        <Grid Grid.Column="0">
+            <StackPanel>
+                <StackPanel.Background>
+                    <ImageBrush/>
+                </StackPanel.Background>
+                <Button x:Name="OneTouchBtn"  Height="50" Click="BtnClick">
+                    <Button.Background>
+                        <ImageBrush ImageSource="img/map.png" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="MapBtn"    Height="50" Click="BtnClick">
+                    <Button.Background>
+                        <ImageBrush ImageSource="img/map.png"/>
+                    </Button.Background>
+                </Button>
+                <Button  x:Name="SettingBtn"   Height="50" Click="BtnClick">
+                    <Button.Background>
+                        <ImageBrush ImageSource="img/setting.png"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+            
+        </Grid>
 
     </Grid>
 </Window>
