@@ -293,18 +293,32 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dvh-DJ-eXu">
+                                                    <rect key="frame" x="271" y="13" width="80" height="30"/>
+                                                    <color key="backgroundColor" red="0.93725490199999995" green="0.1843137255" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="YUN-5N-gUE"/>
+                                                        <constraint firstAttribute="height" constant="30" id="due-dp-R1S"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="wGZ-4o-as2" firstAttribute="centerY" secondItem="qbs-K2-0O9" secondAttribute="centerY" id="8ds-l9-2CD"/>
                                                 <constraint firstItem="hma-F0-fe5" firstAttribute="leading" secondItem="qbs-K2-0O9" secondAttribute="leadingMargin" constant="32" id="Gzq-Jr-RTu"/>
                                                 <constraint firstItem="2G1-ap-Nyv" firstAttribute="centerX" secondItem="hma-F0-fe5" secondAttribute="centerX" id="JZq-0d-Qk3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Dvh-DJ-eXu" secondAttribute="trailing" constant="16" id="JbH-fK-HXF"/>
                                                 <constraint firstAttribute="bottom" secondItem="hma-F0-fe5" secondAttribute="bottom" id="P5I-CU-Zpn"/>
                                                 <constraint firstItem="hma-F0-fe5" firstAttribute="top" secondItem="qbs-K2-0O9" secondAttribute="top" id="rRg-lx-I1g"/>
+                                                <constraint firstItem="Dvh-DJ-eXu" firstAttribute="centerY" secondItem="qbs-K2-0O9" secondAttribute="centerY" id="rrn-yW-1Mb"/>
                                                 <constraint firstItem="wGZ-4o-as2" firstAttribute="leading" secondItem="2G1-ap-Nyv" secondAttribute="trailing" constant="16" id="vGN-oH-uaK"/>
                                                 <constraint firstItem="2G1-ap-Nyv" firstAttribute="centerY" secondItem="hma-F0-fe5" secondAttribute="centerY" id="zsy-Rn-MX0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="lineNumberLabel" destination="Dvh-DJ-eXu" id="0Oz-Jh-5lw"/>
                                             <outlet property="pointLabel" destination="2G1-ap-Nyv" id="M5V-K3-HRo"/>
                                             <outlet property="stationName" destination="wGZ-4o-as2" id="a5f-vW-ypb"/>
                                         </connections>

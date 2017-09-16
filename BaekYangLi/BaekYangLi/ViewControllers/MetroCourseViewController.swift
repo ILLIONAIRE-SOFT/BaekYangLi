@@ -65,7 +65,9 @@ extension MetroCourseViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StationCourseCell") as! StationCourseCell
         
-        cell.initCell(with: stations[indexPath.row])
+        let lineNumber = destinationInfo?.shtStatnId?[indexPath.row]
+        cell.initCell(with: stations[indexPath.row], lineNumber: lineNumber!)
+        
         
         return cell
     }
