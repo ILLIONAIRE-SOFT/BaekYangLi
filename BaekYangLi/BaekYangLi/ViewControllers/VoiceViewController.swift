@@ -85,7 +85,7 @@ extension VoiceViewController: NSKRecognizerDelegate {
             self.destinationLabel.text = result
             
             startLoading()
-            MetroAPI.getDestinationInfos(destination: "충무로", completion: { (destinationInfos) in
+            MetroAPI.getDestinationInfos(destination: result, completion: { (destinationInfos) in
                 self.stopLoading()
                 
                 let tabTwoSB = UIStoryboard(name: "Tab2", bundle: nil)
