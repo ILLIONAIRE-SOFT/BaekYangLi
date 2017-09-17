@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -405,8 +405,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="destPoint" destination="E5I-OW-5ka" id="4Kt-hS-bGv"/>
                         <outlet property="destinationLabel" destination="hkU-OR-f2K" id="QPV-Tt-Rs3"/>
+                        <outlet property="point1" destination="pCS-TN-gs1" id="HBa-Nr-qzi"/>
+                        <outlet property="point2" destination="eAR-P0-dn3" id="vju-ib-oPl"/>
+                        <outlet property="point3" destination="f0D-vK-JLL" id="Qqr-RW-Bby"/>
                         <outlet property="startLabel" destination="Vpt-1Q-akr" id="JlD-xG-edl"/>
+                        <outlet property="startPoint" destination="v6b-f0-MyI" id="Pra-a5-Nq2"/>
                         <outlet property="stationCountLabel" destination="zXQ-Yx-Cvq" id="0GE-kW-lSu"/>
                         <outlet property="tableView" destination="rBW-9c-zTw" id="0R8-uH-RFN"/>
                         <outlet property="timeToDestination" destination="Xzg-sB-HuA" id="mZD-vH-Qem"/>
