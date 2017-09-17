@@ -189,6 +189,41 @@ namespace BaekYangLi
                 }
                 count++;
             }
+
+            url = String.Format("http://172.16.0.35:8000/getTimetable/{0}",
+                    NearStationNames[idx].code);
+            var timetable = GetResponseString(url);
+
+            JArray tables = JArray.Parse(timetable);
+
+            foreach (JObject item in tables)
+            {
+                var tag = (int)item["inout_tag"];
+                var end_station = (string)item["end_station"];
+                var left_time = (string)item["left_time"];
+                Label contents = new Label {
+                    HorizontalContentAlignment = DummyLabel.HorizontalContentAlignment,
+                    VerticalContentAlignment = DummyLabel.VerticalContentAlignment,
+                    DataContext = DummyLabel.DataContext
+                };
+                contents.Visibility = Visibility.Visible;
+                contents.Content = left_time + "  " + end_station;
+                if (tag == 1)    //상행
+                {
+                    InTable.Children.Add(contents);
+                }
+                else            //하행
+                { 
+                    OutTable.Children.Add(contents);
+                }
+                {
+                        
+                }
+                {
+
+                }
+            }
+
         }
     }
 }
