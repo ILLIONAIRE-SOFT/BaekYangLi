@@ -107,6 +107,7 @@ app.get('/getStations', function(req, res) {
 });
 
 app.get('/findRoute/:start/:dest', function(req, res) {
+  console.log("start : "+req.params.start+" dest : "+req.params.dest);
   if(req.params.dest.trim().endsWith("역"))
     req.params.dest = req.params.dest.slice(0, req.params.dest.length-1);
   res.send(getRoutes(req.params.start, req.params.dest));
@@ -177,7 +178,7 @@ app.get('/getTrainsLive/:line', function(req, res) {
     res.send(infos);
 });
 
-server.listen(8000, function() {
+server.listen(3000, function() {
   console.log('Express server listening on port ' + server.address().port);
 });
 
