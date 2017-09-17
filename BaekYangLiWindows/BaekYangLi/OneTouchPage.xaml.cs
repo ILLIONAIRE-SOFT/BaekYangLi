@@ -120,7 +120,7 @@ namespace BaekYangLi
 
         private void NextBtnClick(object sender, RoutedEventArgs e)
         {
-            if (NearStationNames.Count < 1)
+            if (NearStationNames.Count <= 1)
                 return;
             Idx++;
             if (NearStationNames.Count <= Idx)
@@ -133,7 +133,7 @@ namespace BaekYangLi
 
         private void PrevBtnClick(object sender, RoutedEventArgs e)
         {
-            if (NearStationNames.Count < 1)
+            if (NearStationNames.Count <= 1)
                 return;
             Idx--;
             if (0 > Idx)
