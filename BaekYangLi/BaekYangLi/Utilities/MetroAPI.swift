@@ -18,7 +18,7 @@ struct APIType {
 
 struct MetroAPI {
     
-    static let server_url = "http://172.16.0.35:8000/"
+    static let server_url = "http://1.238.56.88:3000/"
     
     static func getDestinationInfo(completion: @escaping () -> ()) {
         
@@ -27,11 +27,11 @@ struct MetroAPI {
             completion()
         }
     }
-    //
+
+
     static func getNearestStations(latitude: Double, longitude: Double, completion: @escaping ([Station]) -> ()) {
 
         Alamofire.request("\(server_url)\(APIType.getNearestStations)/\(latitude)/\(longitude)", method: .get, parameters: nil, encoding: JSONEncoding.default).responseArray { (response: DataResponse<[Station]>) in
-            print(response.data)
             switch response.result {
             case .success:
                 if let stations = response.result.value {
@@ -72,5 +72,6 @@ struct MetroAPI {
             }
         }
     }
+    
     
 }
