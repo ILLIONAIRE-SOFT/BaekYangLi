@@ -124,6 +124,13 @@ app.get('/getTrains', function(req, res) {
   });
 })
 
+app.get('/getTimeTable/:code', function(req ,res) {
+  var sql = "SELECT * from timetable where station_num = "+req.params.code+" and week_tag = "+getDayType()+" order by left_time";
+  connection.query(sql, function(err ,result) {
+    res.send(result);
+  })
+});
+
 app.get('/getTrainsLive/:line', function(req, res) {
   var startParse = 0;
   var line = 0;
