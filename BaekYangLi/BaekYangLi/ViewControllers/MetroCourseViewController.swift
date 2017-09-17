@@ -49,13 +49,19 @@ class MetroCourseViewController: UIViewController {
                     self.stations.append(st)
                 }
                 
-                if lines.count == 0 {
-                    lines.append(st)
-                }
-                
-                if lines[lines.count] != st && st != "" {
-                    lines.append(st)
-                }
+            }
+        }
+        
+        guard var sts = destinationInfo?.shtStatnId else {
+            return
+        }
+        
+        for (i, l) in sts.enumerated() {
+            if lines.count == 0 {
+                lines.append(l)
+            }
+            if lines[lines.count-1] != l  && l != "" {
+                lines.append(l)
             }
         }
         
@@ -113,6 +119,7 @@ class MetroCourseViewController: UIViewController {
     }
     
     func getColor(_ line: String) -> UIColor {
+        print(line)
         switch line {
         case "1호선":
             return UIColor(red:0.02, green:0.18, blue:0.58, alpha:1.0)
