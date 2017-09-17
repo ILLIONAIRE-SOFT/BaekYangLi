@@ -12,6 +12,8 @@ class StationCourseCell: UITableViewCell {
 
     @IBOutlet var pointLabel: UILabel!
     @IBOutlet var stationName: UILabel!
+    @IBOutlet var lineNumberLabel: UILabel!
+    
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -23,7 +25,8 @@ class StationCourseCell: UITableViewCell {
         super.layoutSubviews()
         
         pointLabel.clipsToBounds = true
-        pointLabel.layer.cornerRadius = 12
+        pointLabel.layer.cornerRadius = 8
+        lineNumberLabel.layer.cornerRadius = 8
     }
     
     override func awakeFromNib() {
@@ -38,8 +41,9 @@ class StationCourseCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func initCell(with destination: String) {
+    public func initCell(with destination: String, lineNumber: String) {
         stationName.text = destination
+        lineNumberLabel.text = lineNumber
     }
 
 }

@@ -16,14 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+
+        // Tab2 테스트할때 아래 initViewController를 Tab2로
         
-        let initViewController = "Tab2"
+        let initViewController = "Main"
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         let storyboard = UIStoryboard(name: initViewController, bundle: nil)
         
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "Tab2")
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "SplashViewController")
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
 
