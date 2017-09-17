@@ -1,0 +1,19 @@
+{
+  "name": "baek_yang_li_server",
+  "version": "1.0.0",
+  "description": "server of subway app",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.15.4",
+    "htmlparser2": "^3.9.2",
+    "mysql": "^2.14.1",
+    "sync-request": "^4.1.0",
+    "urlencode": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
