@@ -38,6 +38,10 @@
                 </Grid.ColumnDefinitions>
                 <Button Content="◁" x:Name="PrevStationBtn" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="PrevBtnClick"/>
                 <Button Content="▷" x:Name="NextStationBtn" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="NextBtnClick"/>
+                <Label x:Name="InfoArr1" Content="1" Grid.Column="1" HorizontalAlignment="Left" Margin="10.5,22,0,0" VerticalAlignment="Top" Width="408" Height="38" FontSize="18" Visibility="Hidden"/>
+                <Label x:Name="InfoArr2" Content="2" Grid.Column="1" HorizontalAlignment="Left" Margin="10.5,65,0,0" VerticalAlignment="Top" Width="408" Height="38" FontSize="18" Visibility="Hidden"/>
+                <Label x:Name="InfoArr3" Content="3" Grid.Column="1" HorizontalAlignment="Left" Margin="10.5,108,0,0" VerticalAlignment="Top" Width="408" Height="38" FontSize="18" Visibility="Hidden"/>
+                <Label x:Name="InfoArr4" Content="4" Grid.Column="1" HorizontalAlignment="Left" Margin="10.5,151,0,0" VerticalAlignment="Top" Width="408" Height="38" FontSize="18" Visibility="Hidden"/>
 
             </Grid>
         </Grid>

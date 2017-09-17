@@ -34,6 +34,8 @@ namespace BaekYangLi
 
         private void BtnClick(object sender, RoutedEventArgs e)
         {
+            InsideFrame.Content = null;
+            InsideFrame.NavigationService.RemoveBackEntry();
             if (sender == OneTouchBtn)
                 InsideFrame.Navigate(new OneTouchPage());
             else if (sender == MapBtn)

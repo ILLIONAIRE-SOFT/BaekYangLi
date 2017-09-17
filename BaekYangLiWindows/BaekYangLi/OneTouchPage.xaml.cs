@@ -157,11 +157,38 @@ namespace BaekYangLi
                     NearStationNames[idx].name);
             var arrival = GetResponseString(url);
 
-            url = String.Format("http://172.16.0.35:8000/getArrivalTimeOfStation/{0}",
-                    NearStationNames[idx].code);
-
-            var timetable = GetResponseString(url);
-
+            JArray ja = JArray.Parse(GetResponseString(url));
+            /*
+             * {"beginRow":null,"endRow":null,"curPage":null,"pageRow":null,"totalCount":4,"rowNum":1,"selectedCount":4,"subwayId":"1008","subwayNm":null,"updnLine":"상행","trainLineNm":"암사행 - 단대오거리방면","subwayHeading":"오른쪽","statnFid":"1008000823","statnTid":"1008000825","statnId":"1008000824","statnNm":"신흥","trainCo":null,"ordkey":"01002암사","subwayList":"1008","statnList":"1008000824","btrainSttus":null,"barvlDt":"240","btrainNo":"8062","bstatnId":"17","bstatnNm":"암사","recptnDt":"2017-09-17 09:19:48.0","arvlMsg2":"4분 후 (모란)","arvlMsg3":"모란","arvlCd":"99"},{"
+             */
+            int count = 0;
+            foreach (JObject item in ja)
+            {
+                var des = (string)item["trainLineNumber"];
+                var msg = (string)item["arvlMsg2"];
+                switch (count)
+                {
+                    case 0:
+                        InfoArr1.Content = "1. " + des + "  " + msg;
+                        InfoArr1.Visibility = Visibility.Visible;
+                        break;
+                    case 1:
+                        InfoArr2.Content = "2. " + des + "  " + msg;
+                        InfoArr2.Visibility = Visibility.Visible;
+                        break;
+                    case 2:
+                        InfoArr3.Content = "3. " + des + "  " + msg;
+                        InfoArr3.Visibility = Visibility.Visible;
+                        break;
+                    case 3:
+                        InfoArr4.Content = "4. " + des + "  " + msg;
+                        InfoArr4.Visibility = Visibility.Visible;
+                        break;
+                    default:
+                        break;
+                }
+                count++;
+            }
         }
     }
 }
