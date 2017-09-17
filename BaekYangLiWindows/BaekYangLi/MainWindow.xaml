@@ -1,0 +1,48 @@
+﻿<Window x:Class="BaekYangLi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BaekYangLi"
+        Icon="img/icon2x.ico"
+        mc:Ignorable="d"
+        Title="OneTocuhSubway" Height="400" Width="600" Background="{x:Null}">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1"  Background="White" Margin="0,0,0,0.5" >
+            <Frame x:Name="InsideFrame" NavigationUIVisibility="Hidden"/>
+        </Grid>
+        <Grid Grid.Column="0">
+            <StackPanel>
+                <StackPanel.Background>
+                    <ImageBrush/>
+                </StackPanel.Background>
+                <Button x:Name="OneTouchBtn" Width="50" Height="50" Click="BtnClick" Margin="0" RenderTransformOrigin="0.5,0.5" BorderThickness="5">
+                    <Button.BorderBrush>
+                        <ImageBrush/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush ImageSource="img/one.png" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="MapBtn" Width="50"   Height="50" Click="BtnClick" BorderBrush="{x:Null}" BorderThickness="5">
+                    <Button.Background>
+                        <ImageBrush ImageSource="img/map.png"/>
+                    </Button.Background>
+                </Button>
+
+                <StackPanel Height="218"/>
+                <Button  x:Name="SettingBtn" Width="50"  Height="50" Click="BtnClick"  BorderBrush="{x:Null}" Margin="2,0" BorderThickness="5">
+                    <Button.Background>
+                        <ImageBrush ImageSource="img/setting.png"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</Window>
