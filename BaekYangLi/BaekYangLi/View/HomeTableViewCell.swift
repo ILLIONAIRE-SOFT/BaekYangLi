@@ -34,8 +34,6 @@ class HomeTableViewCell: UITableViewCell {
     
     func initCell(with station : Station) {
         self.lineNum.text = station.line
-<<<<<<< HEAD
-        
         self.upFirstLeftTime.text = getTime(station.up?[1].arriveTime)
         self.upFirstDestination.text = station.up?[1].destinationName
         
@@ -47,25 +45,6 @@ class HomeTableViewCell: UITableViewCell {
         
         self.downSecondLeftTime.text = getTime(station.down?[0].arriveTime)
         self.downSecondDestination.text =  station.down?[0].destinationName
-=======
-        self.lineNum.backgroundColor = getColor(station.line!)
- 
-        self.upFirstLeftTime.textColor = getColor(station.line!)
-        self.upFirstLeftTime.text = getTime(station.up?[0].arriveTime)
-        self.upFirstDestination.text = station.up?[0].destinationName
-        
-        self.upSecondLeftTime.textColor = getColor(station.line!)
-        self.upSecondLeftTime.text = getTime(station.up?[1].arriveTime)
-        self.upSecondDestination.text = station.up?[1].destinationName
-        
-        self.downFirstLeftTime.textColor = getColor(station.line!)
-        self.downFirstLeftTime.text = getTime(station.down?[0].arriveTime)
-        self.downFirstDestination.text =  station.down?[0].destinationName
-        
-        self.downSecondLeftTime.textColor = getColor(station.line!)
-        self.downSecondLeftTime.text = getTime(station.down?[1].arriveTime)
-        self.downSecondDestination.text =  station.down?[1].destinationName
->>>>>>> 6cfdb1e7d11e5daa20e18220221113c5c50a8994
     }
     
     func getTime(_ time: String?) -> String {
