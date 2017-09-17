@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BaekYangLi"
         Icon="img/icon2x.ico"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600" Background="{x:Null}">
+        Title="OneTocuhSubway" Height="400" Width="600" Background="{x:Null}">
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10*"/>
