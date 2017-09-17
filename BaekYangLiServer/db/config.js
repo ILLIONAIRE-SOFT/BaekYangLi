@@ -1,7 +1,7 @@
 module.exports = (function () {
     return {
       db: {
-        host: '127.0.0.1',
+        host: '172.16.0.35',
         port: '3306',
         user: 'root',
         password: '12341234',
