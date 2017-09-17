@@ -216,12 +216,6 @@ namespace BaekYangLi
                 { 
                     OutTable.Children.Add(contents);
                 }
-                {
-                        
-                }
-                {
-
-                }
             }
 
         }

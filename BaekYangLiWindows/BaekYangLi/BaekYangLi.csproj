@@ -51,6 +51,9 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon2x.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EO.Base, Version=17.2.75.0, Culture=neutral, PublicKeyToken=e92353a6bf73fffc, processorArchitecture=MSIL">
       <HintPath>..\packages\EO.WebBrowser.17.2.75.0\lib\EO.Base.dll</HintPath>
@@ -170,6 +173,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\one.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon2x.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icon2x.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
